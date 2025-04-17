@@ -2,11 +2,12 @@ from datetime import datetime
 from typing import List, Dict
 import re
 
-
 def parse_ics_datetime(dt_str: str) -> str:
+    """Convert iCalendar datetime string to ISO 8601 format."""
     return datetime.strptime(dt_str.strip(), "%Y%m%dT%H%M%SZ").isoformat() + "Z"
 
 def parse_ics_event(ics_text: str) -> Dict:
+    """Parse a single VEVENT block from an iCalendar file into a dictionary."""
     fields = {
         "title": None,
         "description": None,
@@ -37,8 +38,9 @@ def parse_ics_event(ics_text: str) -> Dict:
 
     return {k: v for k, v in fields.items() if v is not None}
 
-
 def import_ics(filepath: str) -> List[Dict]:
+    """Import events from an iCalendar (.ics) file."""
+    print(f"→ Reading iCalendar file: {filepath}")
     with open(filepath, "r") as f:
         content = f.read()
 
@@ -47,6 +49,14 @@ def import_ics(filepath: str) -> List[Dict]:
         event_block = match.group(1)
         event_data = parse_ics_event(event_block)
         events.append(event_data)
+        print(f"→ Parsed event: {event_data.get('title', 'Untitled')}")
 
-    print(f"Imported {len(events)} event(s) from {filepath}")
+    print(f"→ Imported {len(events)} event(s) from {filepath}")
     return events
+
+if __name__ == "__main__":
+    
+    filepath = "/Users/derekrosenzweig/Documents/GitHub/Chronologue/data/calendar/raw/lab_manager_4-12.ics"  
+    events = import_ics(filepath)
+    for event in events:
+        print(event)

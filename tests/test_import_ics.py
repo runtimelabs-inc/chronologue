@@ -1,5 +1,4 @@
 # tests/test_import_ics.py
-from calendar import import_ics
 
 def test_parse_ics_event():
     ics_event = """

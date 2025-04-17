@@ -1,6 +1,11 @@
 # tests/test_export_ics.py
 import os
-from calendar import export_ics
+import sys
+
+# Add the parent directory to the sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from modules.schema import validate_memory_trace
 
 def test_generate_ics_string():
     event = {
