@@ -30,7 +30,7 @@ def embed_memory_traces(traces: List[Dict], overwrite: bool = False) -> List[Dic
     return traces
 if __name__ == "__main__":
     # Make script location robust
-    data_dir = '/Users/derekrosenzweig/Documents/GitHub/mmcr-memory-system/data'
+    data_dir = '/Users/derekrosenzweig/Documents/GitHub/Chronologue/data'
     input_dir = Path(f"{data_dir}/conversation/raw/")
     output_dir = Path(f"{data_dir}/conversation/embedding/")
 
