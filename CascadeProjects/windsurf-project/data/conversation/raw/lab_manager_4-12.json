@@ -1,0 +1,93 @@
+{
+    "user_id": "lab_manager",
+    "session_id": "lab_week_2025_04_07_to_2025_04_13",
+    "memory": [
+      {
+        "id": "m001",
+        "type": "goal",
+        "timestamp": "2025-04-07T09:00:00Z",
+        "content": "Restock pipette tips and ethanol for wet lab stations.",
+        "task_id": "lab_ops",
+        "importance": 0.8,
+        "completion_status": "pending"
+      },
+      {
+        "id": "m002",
+        "type": "observation",
+        "timestamp": "2025-04-07T13:45:00Z",
+        "content": "Temperature in incubator #3 drifted 1.5°C above target during morning run.",
+        "task_id": "wetlab_sync",
+        "importance": 0.6
+      },
+      {
+        "id": "m003",
+        "type": "reflection",
+        "timestamp": "2025-04-08T18:00:00Z",
+        "content": "Need to rotate chemical inventory checks every Monday instead of end of week.",
+        "task_id": "lab_ops",
+        "importance": 0.7
+      },
+      {
+        "id": "m004",
+        "type": "calendar_event",
+        "timestamp": "2025-04-09T15:00:00Z",
+        "content": "Weekly sync with wet lab team",
+        "task_id": "wetlab_sync",
+        "importance": 0.9,
+        "collaborators": ["tech_1@lab.org", "tech_2@lab.org"],
+        "linked_event_uid": "weekly-wetlab-20250409@memorysystem.ai"
+      },
+      {
+        "id": "m005",
+        "type": "goal",
+        "timestamp": "2025-04-10T10:30:00Z",
+        "content": "Update onboarding packet for new RAs.",
+        "task_id": "lab_meeting",
+        "importance": 0.85,
+        "completion_status": "scheduled"
+      },
+      {
+        "id": "m006",
+        "type": "reflection",
+        "timestamp": "2025-04-10T17:45:00Z",
+        "content": "Training went well with new RA but clarity needed on freezer labeling SOP.",
+        "task_id": "lab_meeting",
+        "importance": 0.75
+      },
+      {
+        "id": "m007",
+        "type": "calendar_event",
+        "timestamp": "2025-04-11T14:00:00Z",
+        "content": "All-hands lab meeting: protocol review + Q&A",
+        "task_id": "lab_meeting",
+        "importance": 0.95,
+        "collaborators": ["derek.rosenzweig1@gmail.com"],
+        "linked_event_uid": "allhands-labmeeting-20250411@memorysystem.ai"
+      },
+      {
+        "id": "m008",
+        "type": "observation",
+        "timestamp": "2025-04-12T11:20:00Z",
+        "content": "PCR station reconfiguration completed ahead of schedule.",
+        "task_id": "wetlab_sync",
+        "importance": 0.65
+      },
+      {
+        "id": "m009",
+        "type": "goal",
+        "timestamp": "2025-04-13T08:45:00Z",
+        "content": "Submit budget request for Q2 consumables.",
+        "task_id": "lab_ops",
+        "importance": 0.9,
+        "completion_status": "done"
+      },
+      {
+        "id": "m010",
+        "type": "reflection",
+        "timestamp": "2025-04-13T19:30:00Z",
+        "content": "Having calendar-linked reminders improved task visibility this week.",
+        "task_id": "lab_ops",
+        "importance": 0.8
+      }
+    ]
+  }

@@ -1,0 +1,455 @@
+{
+  "user_id": "lab_manager",
+  "session_id": "lab_may_2025",
+  "memory": [
+    {
+      "id": "m001",
+      "type": "goal",
+      "timestamp": "2025-04-07T09:00:00Z",
+      "content": "Restock pipette tips and ethanol for wet lab stations.",
+      "task_id": "lab_ops",
+      "importance": 0.8,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m002",
+      "type": "observation",
+      "timestamp": "2025-04-07T13:45:00Z",
+      "content": "Temperature in incubator #3 drifted 1.5\u00b0C above target during morning run.",
+      "task_id": "wetlab_sync",
+      "importance": 0.6
+    },
+    {
+      "id": "m003",
+      "type": "reflection",
+      "timestamp": "2025-04-08T18:00:00Z",
+      "content": "Need to rotate chemical inventory checks every Monday instead of end of week.",
+      "task_id": "lab_ops",
+      "importance": 0.7
+    },
+    {
+      "id": "m004",
+      "type": "calendar_event",
+      "timestamp": "2025-04-09T15:00:00Z",
+      "content": "Weekly sync with wet lab team",
+      "task_id": "wetlab_sync",
+      "importance": 0.9,
+      "collaborators": [
+        "tech_1@lab.org",
+        "tech_2@lab.org"
+      ],
+      "linked_event_uid": "weekly-wetlab-20250409@memorysystem.ai"
+    },
+    {
+      "id": "m005",
+      "type": "goal",
+      "timestamp": "2025-04-10T10:30:00Z",
+      "content": "Update onboarding packet for new RAs.",
+      "task_id": "lab_meeting",
+      "importance": 0.85,
+      "completion_status": "scheduled"
+    },
+    {
+      "id": "m006",
+      "type": "reflection",
+      "timestamp": "2025-04-10T17:45:00Z",
+      "content": "Training went well with new RA but clarity needed on freezer labeling SOP.",
+      "task_id": "lab_meeting",
+      "importance": 0.75
+    },
+    {
+      "id": "m007",
+      "type": "calendar_event",
+      "timestamp": "2025-04-11T14:00:00Z",
+      "content": "All-hands lab meeting: protocol review + Q&A",
+      "task_id": "lab_meeting",
+      "importance": 0.95,
+      "collaborators": [
+        "derek.rosenzweig1@gmail.com"
+      ],
+      "linked_event_uid": "allhands-labmeeting-20250411@memorysystem.ai"
+    },
+    {
+      "id": "m008",
+      "type": "observation",
+      "timestamp": "2025-04-12T11:20:00Z",
+      "content": "PCR station reconfiguration completed ahead of schedule.",
+      "task_id": "wetlab_sync",
+      "importance": 0.65
+    },
+    {
+      "id": "m009",
+      "type": "goal",
+      "timestamp": "2025-04-13T08:45:00Z",
+      "content": "Submit budget request for Q2 consumables.",
+      "task_id": "lab_ops",
+      "importance": 0.9,
+      "completion_status": "done"
+    },
+    {
+      "id": "m010",
+      "type": "reflection",
+      "timestamp": "2025-04-13T19:30:00Z",
+      "content": "Having calendar-linked reminders improved task visibility this week.",
+      "task_id": "lab_ops",
+      "importance": 0.8
+    },
+    {
+      "id": "m011",
+      "type": "goal",
+      "timestamp": "2025-05-01T09:00:00Z",
+      "content": "Kick off Q2 by reviewing open supply orders and prioritizing urgent items.",
+      "task_id": "lab_ops",
+      "importance": 0.9,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m012",
+      "type": "calendar_event",
+      "timestamp": "2025-05-01T10:00:00Z",
+      "content": "Q2 kickoff sync: priorities and logistics planning",
+      "task_id": "lab_ops",
+      "importance": 0.95,
+      "collaborators": [
+        "procurement@lab.org"
+      ],
+      "linked_event_uid": "q2-kickoff-20250501@memorysystem.ai"
+    },
+    {
+      "id": "m013",
+      "type": "observation",
+      "timestamp": "2025-05-01T14:30:00Z",
+      "content": "70% ethanol stock is lower than expected across all bench stations.",
+      "task_id": "inventory_check",
+      "importance": 0.7
+    },
+    {
+      "id": "m014",
+      "type": "goal",
+      "timestamp": "2025-05-01T15:30:00Z",
+      "content": "Audit pipette tip boxes and reorder filtered tips (10 \u00b5L and 200 \u00b5L).",
+      "task_id": "inventory_check",
+      "importance": 0.85,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m015",
+      "type": "reflection",
+      "timestamp": "2025-05-01T18:00:00Z",
+      "content": "We should move from ad-hoc inventory notes to shared digital logs updated weekly.",
+      "task_id": "lab_ops",
+      "importance": 0.75
+    },
+    {
+      "id": "m016",
+      "type": "calendar_event",
+      "timestamp": "2025-05-02T11:00:00Z",
+      "content": "Lab deep cleaning block (benches, cold room, centrifuges)",
+      "task_id": "lab_ops",
+      "importance": 0.9,
+      "collaborators": [
+        "team_leads@lab.org"
+      ],
+      "linked_event_uid": "lab-cleaning-20250502@memorysystem.ai"
+    },
+    {
+      "id": "m017",
+      "type": "observation",
+      "timestamp": "2025-05-02T14:00:00Z",
+      "content": "Cold room had two expired reagents; flagged for discard.",
+      "task_id": "inventory_check",
+      "importance": 0.65
+    },
+    {
+      "id": "m018",
+      "type": "goal",
+      "timestamp": "2025-05-03T10:00:00Z",
+      "content": "Document current freezer box layout in shared drive before adding new samples.",
+      "task_id": "lab_ops",
+      "importance": 0.8,
+      "completion_status": "scheduled"
+    },
+    {
+      "id": "m019",
+      "type": "observation",
+      "timestamp": "2025-05-03T13:00:00Z",
+      "content": "Noticed inconsistent labeling format across freezer racks \u2014 may confuse RAs.",
+      "task_id": "inventory_check",
+      "importance": 0.6
+    },
+    {
+      "id": "m020",
+      "type": "reflection",
+      "timestamp": "2025-05-04T16:30:00Z",
+      "content": "Rotating cleaning responsibilities biweekly seems more sustainable than weekly shifts.",
+      "task_id": "lab_ops",
+      "importance": 0.7
+    },
+    {
+      "id": "m021",
+      "type": "goal",
+      "timestamp": "2025-05-05T09:15:00Z",
+      "content": "Schedule calibration checks for centrifuges and incubators.",
+      "task_id": "equipment_maintenance",
+      "importance": 0.9,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m022",
+      "type": "calendar_event",
+      "timestamp": "2025-05-05T11:00:00Z",
+      "content": "Calibration vendor visit for autoclaves and water bath",
+      "task_id": "equipment_maintenance",
+      "importance": 0.95,
+      "collaborators": [
+        "vendor_services@lab.org"
+      ],
+      "linked_event_uid": "vendor-calibration-20250505@memorysystem.ai"
+    },
+    {
+      "id": "m023",
+      "type": "observation",
+      "timestamp": "2025-05-05T14:30:00Z",
+      "content": "Centrifuge #2 showed imbalance warning at 4,000 rpm \u2014 flagged for inspection.",
+      "task_id": "equipment_maintenance",
+      "importance": 0.8
+    },
+    {
+      "id": "m024",
+      "type": "goal",
+      "timestamp": "2025-05-06T10:00:00Z",
+      "content": "Update SOP for RNA extraction with new column-based kit.",
+      "task_id": "protocol_update",
+      "importance": 0.85,
+      "completion_status": "scheduled"
+    },
+    {
+      "id": "m025",
+      "type": "reflection",
+      "timestamp": "2025-05-06T16:45:00Z",
+      "content": "Switch to column-based RNA kits reduced hands-on time by 20 minutes.",
+      "task_id": "protocol_update",
+      "importance": 0.7
+    },
+    {
+      "id": "m026",
+      "type": "calendar_event",
+      "timestamp": "2025-05-07T13:00:00Z",
+      "content": "Team walkthrough of updated RNA extraction workflow",
+      "task_id": "protocol_update",
+      "importance": 0.9,
+      "collaborators": [
+        "wetlab_team@lab.org"
+      ],
+      "linked_event_uid": "protocol-walkthrough-20250507@memorysystem.ai"
+    },
+    {
+      "id": "m027",
+      "type": "observation",
+      "timestamp": "2025-05-07T15:30:00Z",
+      "content": "New pipetting steps led to minor sample loss during elution; requires adjustment.",
+      "task_id": "protocol_update",
+      "importance": 0.75
+    },
+    {
+      "id": "m028",
+      "type": "goal",
+      "timestamp": "2025-05-08T11:30:00Z",
+      "content": "Generate checklist for weekly calibration log review.",
+      "task_id": "equipment_maintenance",
+      "importance": 0.8,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m029",
+      "type": "observation",
+      "timestamp": "2025-05-09T10:15:00Z",
+      "content": "Water bath heating time improved after descaling \u2014 maintenance effective.",
+      "task_id": "equipment_maintenance",
+      "importance": 0.65
+    },
+    {
+      "id": "m030",
+      "type": "reflection",
+      "timestamp": "2025-05-10T17:00:00Z",
+      "content": "Mid-week walkthroughs improved protocol adoption faster than documentation alone.",
+      "task_id": "protocol_update",
+      "importance": 0.8
+    },
+    {
+      "id": "m031",
+      "type": "goal",
+      "timestamp": "2025-05-12T09:00:00Z",
+      "content": "Prepare training packet for new RAs including safety SOPs and pipetting guide.",
+      "task_id": "ra_training",
+      "importance": 0.6,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m032",
+      "type": "observation",
+      "timestamp": "2025-05-12T10:00:00Z",
+      "content": "New RA had difficulty locating ethanol refill stations during bench prep.",
+      "task_id": "ra_training",
+      "importance": 0.65
+    },
+    {
+      "id": "m033",
+      "type": "reflection",
+      "timestamp": "2025-05-12T11:00:00Z",
+      "content": "Pairing new RAs with senior techs for shadowing accelerated ramp-up.",
+      "task_id": "ra_training",
+      "importance": 0.7
+    },
+    {
+      "id": "m034",
+      "type": "calendar_event",
+      "timestamp": "2025-05-12T12:00:00Z",
+      "content": "RA orientation: safety procedures + tour",
+      "task_id": "ra_training",
+      "importance": 0.75,
+      "collaborators": ["team@lab.org"],
+      "linked_event_uid": "ra-orientation-20250512@memorysystem.ai"
+    },
+    {
+      "id": "m035",
+      "type": "goal",
+      "timestamp": "2025-05-12T13:00:00Z",
+      "content": "Send updated chemical hygiene plan to all lab personnel.",
+      "task_id": "safety_review",
+      "importance": 0.8,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m036",
+      "type": "observation",
+      "timestamp": "2025-05-13T09:00:00Z",
+      "content": "Lab coats were missing from the secondary PPE closet — restocking needed.",
+      "task_id": "safety_review",
+      "importance": 0.6
+    },
+    {
+      "id": "m037",
+      "type": "reflection",
+      "timestamp": "2025-05-13T10:00:00Z",
+      "content": "Safety signage could be improved near fume hood area for clarity.",
+      "task_id": "safety_review",
+      "importance": 0.65
+    },
+    {
+      "id": "m038",
+      "type": "calendar_event",
+      "timestamp": "2025-05-13T11:00:00Z",
+      "content": "Lab safety walkthrough with RA cohort",
+      "task_id": "safety_review",
+      "importance": 0.7,
+      "collaborators": ["team@lab.org"],
+      "linked_event_uid": "safety-walkthrough-20250513@memorysystem.ai"
+    },
+    {
+      "id": "m039",
+      "type": "goal",
+      "timestamp": "2025-05-13T12:00:00Z",
+      "content": "Create quiz to assess RA understanding of emergency protocols.",
+      "task_id": "ra_training",
+      "importance": 0.75,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m040",
+      "type": "observation",
+      "timestamp": "2025-05-13T13:00:00Z",
+      "content": "Two RAs asked for clarification on fire extinguisher usage steps.",
+      "task_id": "ra_training",
+      "importance": 0.8
+    }, 
+    {
+      "id": "m041",
+      "type": "reflection",
+      "timestamp": "2025-05-21T09:00:00Z",
+      "content": "Recurring delays in tip deliveries suggest we need to switch vendors for Q3.",
+      "task_id": "lab_ops",
+      "importance": 0.6
+    },
+    {
+      "id": "m042",
+      "type": "calendar_event",
+      "timestamp": "2025-05-21T10:00:00Z",
+      "content": "Mid-Q2 budget sync: open POs, remaining funds, Q3 planning",
+      "task_id": "lab_ops",
+      "importance": 0.65,
+      "collaborators": ["team@lab.org"],
+      "linked_event_uid": "budget-sync-20250521@memorysystem.ai"
+    },
+    {
+      "id": "m043",
+      "type": "goal",
+      "timestamp": "2025-05-21T11:00:00Z",
+      "content": "Finalize and submit budget update to finance for Q2 operations.",
+      "task_id": "lab_ops",
+      "importance": 0.7,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m044",
+      "type": "observation",
+      "timestamp": "2025-05-21T12:00:00Z",
+      "content": "Vendor response time increased due to national holiday supply chain issues.",
+      "task_id": "procurement",
+      "importance": 0.75
+    },
+    {
+      "id": "m045",
+      "type": "reflection",
+      "timestamp": "2025-05-21T13:00:00Z",
+      "content": "Consolidating orders by vendor helped reduce delivery variability.",
+      "task_id": "procurement",
+      "importance": 0.8
+    },
+    {
+      "id": "m046",
+      "type": "calendar_event",
+      "timestamp": "2025-05-22T09:00:00Z",
+      "content": "Inventory ordering sync: Q3 projections and vendor review",
+      "task_id": "procurement",
+      "importance": 0.6,
+      "collaborators": ["team@lab.org"],
+      "linked_event_uid": "ordering-sync-20250522@memorysystem.ai"
+    },
+    {
+      "id": "m047",
+      "type": "goal",
+      "timestamp": "2025-05-22T10:00:00Z",
+      "content": "Compile projected usage for enzymes and plastics through end of Q2.",
+      "task_id": "lab_ops",
+      "importance": 0.65,
+      "completion_status": "pending"
+    },
+    {
+      "id": "m048",
+      "type": "observation",
+      "timestamp": "2025-05-22T11:00:00Z",
+      "content": "Freezer inventory report showed unexpectedly high use of ligase buffer.",
+      "task_id": "inventory_check",
+      "importance": 0.7
+    },
+    {
+      "id": "m049",
+      "type": "reflection",
+      "timestamp": "2025-05-22T12:00:00Z",
+      "content": "Freezer box logging needs real-time updates to avoid end-of-quarter scrambling.",
+      "task_id": "inventory_check",
+      "importance": 0.75
+    },
+    {
+      "id": "m050",
+      "type": "calendar_event",
+      "timestamp": "2025-05-22T13:00:00Z",
+      "content": "Review enzyme order status and flag substitutions with procurement team",
+      "task_id": "procurement",
+      "importance": 0.8,
+      "collaborators": ["team@lab.org"],
+      "linked_event_uid": "enzyme-orders-20250522@memorysystem.ai"
+    }
+  ]
+}
