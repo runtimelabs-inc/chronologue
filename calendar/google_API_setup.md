@@ -1,6 +1,6 @@
 ### Setting Up Google Calendar API Credentials 
 
-I have developed this guide to walk through creating OAuth 2.0 credentials to enable access to the Google Calendar API for the script `modules/sync_google.py`. 
+Here is a sguide to walk through creating OAuth 2.0 credentials to enable access to the Google Calendar API for the script `modules/sync_google.py`. 
 
 
 **Step 1: Create a Google Cloud Project**
