@@ -1,0 +1,394 @@
+{
+  "conversations": [
+    {
+      "id": "lab-session-000",
+      "title": "Inventory tracking Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-14T20:30:26.594623Z",
+      "update_time": "2025-04-14T20:30:31.594623Z",
+      "mapping": {
+        "msg-1": {
+          "id": "dbd24a15-2ebb-4109-8073-e6ea36c7daf3",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "How do I manage Inventory tracking?"
+              ]
+            },
+            "create_time": "2025-04-14T20:30:26.594623Z"
+          }
+        },
+        "msg-2": {
+          "id": "e4b3d5f6-d482-495d-921e-2c587665655c",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "To manage Inventory tracking, you can start by creating a structured template..."
+              ]
+            },
+            "create_time": "2025-04-14T20:30:31.594623Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-001",
+      "title": "Scheduling experiments Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-13T20:30:26.595398Z",
+      "update_time": "2025-04-13T20:30:31.595398Z",
+      "mapping": {
+        "msg-1": {
+          "id": "292bcc85-23bb-4a0d-945f-aad19852df56",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "What\u2019s the best system for Scheduling experiments?"
+              ]
+            },
+            "create_time": "2025-04-13T20:30:26.595398Z"
+          }
+        },
+        "msg-2": {
+          "id": "466111ea-2e28-42c4-8ea4-07416213f08e",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "A good system for Scheduling experiments involves maintaining clear roles and audit logs..."
+              ]
+            },
+            "create_time": "2025-04-13T20:30:31.595398Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-002",
+      "title": "Onboarding new lab members Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-12T20:30:26.595549Z",
+      "update_time": "2025-04-12T20:30:31.595549Z",
+      "mapping": {
+        "msg-1": {
+          "id": "068b39a5-f3a9-454b-906e-0be81ffbd0dc",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Any tools for automating Onboarding new lab members?"
+              ]
+            },
+            "create_time": "2025-04-12T20:30:26.595549Z"
+          }
+        },
+        "msg-2": {
+          "id": "4f01148d-c604-4ea9-b951-673350bf9ea5",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Automation tools for Onboarding new lab members include LabArchives, Quartzy, and Airtable..."
+              ]
+            },
+            "create_time": "2025-04-12T20:30:31.595549Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-003",
+      "title": "Protocol documentation Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-11T20:30:26.595634Z",
+      "update_time": "2025-04-11T20:30:31.595634Z",
+      "mapping": {
+        "msg-1": {
+          "id": "63da9629-09fe-44a9-a541-b03abc7b6837",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "How should I organize Protocol documentation?"
+              ]
+            },
+            "create_time": "2025-04-11T20:30:26.595634Z"
+          }
+        },
+        "msg-2": {
+          "id": "a93c2200-7f51-47c0-b955-ac45ac82f781",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "For organizing Protocol documentation, use a shared calendar, digital SOPs, and versioned folders..."
+              ]
+            },
+            "create_time": "2025-04-11T20:30:31.595634Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-004",
+      "title": "Equipment maintenance Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-10T20:30:26.595810Z",
+      "update_time": "2025-04-10T20:30:31.595810Z",
+      "mapping": {
+        "msg-1": {
+          "id": "b469b75d-6f7d-483a-bf08-4597634a670c",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Can you help with a checklist for Equipment maintenance?"
+              ]
+            },
+            "create_time": "2025-04-10T20:30:26.595810Z"
+          }
+        },
+        "msg-2": {
+          "id": "f9259065-c28b-4709-abb0-3ea8d6fd9df5",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Here\u2019s a checklist to help you manage Equipment maintenance more effectively..."
+              ]
+            },
+            "create_time": "2025-04-10T20:30:31.595810Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-005",
+      "title": "Data backup procedures Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-09T20:30:26.596183Z",
+      "update_time": "2025-04-09T20:30:31.596183Z",
+      "mapping": {
+        "msg-1": {
+          "id": "6777e396-d85e-4b55-a9a8-33b1107dca05",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "How do I manage Data backup procedures?"
+              ]
+            },
+            "create_time": "2025-04-09T20:30:26.596183Z"
+          }
+        },
+        "msg-2": {
+          "id": "d83cc0cc-88ec-4d06-9488-84d6dccef179",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "To manage Data backup procedures, you can start by creating a structured template..."
+              ]
+            },
+            "create_time": "2025-04-09T20:30:31.596183Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-006",
+      "title": "Lab safety training Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-08T20:30:26.596367Z",
+      "update_time": "2025-04-08T20:30:31.596367Z",
+      "mapping": {
+        "msg-1": {
+          "id": "ce28ec92-1727-40fd-9c4e-1aceab2c5fae",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "What\u2019s the best system for Lab safety training?"
+              ]
+            },
+            "create_time": "2025-04-08T20:30:26.596367Z"
+          }
+        },
+        "msg-2": {
+          "id": "dc9fd942-4a3d-41e5-9b69-238fb84fc08e",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "A good system for Lab safety training involves maintaining clear roles and audit logs..."
+              ]
+            },
+            "create_time": "2025-04-08T20:30:31.596367Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-007",
+      "title": "Ordering supplies Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-07T20:30:26.596442Z",
+      "update_time": "2025-04-07T20:30:31.596442Z",
+      "mapping": {
+        "msg-1": {
+          "id": "d84a4aac-6168-4bb4-89fa-01bce0ef5790",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Any tools for automating Ordering supplies?"
+              ]
+            },
+            "create_time": "2025-04-07T20:30:26.596442Z"
+          }
+        },
+        "msg-2": {
+          "id": "b1e6e8f4-6b0c-4bca-8236-2616b190e159",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Automation tools for Ordering supplies include LabArchives, Quartzy, and Airtable..."
+              ]
+            },
+            "create_time": "2025-04-07T20:30:31.596442Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-008",
+      "title": "Compliance reporting Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-06T20:30:26.596685Z",
+      "update_time": "2025-04-06T20:30:31.596685Z",
+      "mapping": {
+        "msg-1": {
+          "id": "328c28af-0536-4c7d-aa65-5bb8710d6ece",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "How should I organize Compliance reporting?"
+              ]
+            },
+            "create_time": "2025-04-06T20:30:26.596685Z"
+          }
+        },
+        "msg-2": {
+          "id": "af623cbc-5ba1-4d58-bef2-b956af402415",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "For organizing Compliance reporting, use a shared calendar, digital SOPs, and versioned folders..."
+              ]
+            },
+            "create_time": "2025-04-06T20:30:31.596685Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "lab-session-009",
+      "title": "Experiment logging Guidance",
+      "user_id": "user-1234-labmanager",
+      "create_time": "2025-04-05T20:30:26.596787Z",
+      "update_time": "2025-04-05T20:30:31.596787Z",
+      "mapping": {
+        "msg-1": {
+          "id": "f032af1c-4ed4-4d56-8a6c-d88f54a7a046",
+          "message": {
+            "author": {
+              "role": "user"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Can you help with a checklist for Experiment logging?"
+              ]
+            },
+            "create_time": "2025-04-05T20:30:26.596787Z"
+          }
+        },
+        "msg-2": {
+          "id": "fcb89aa3-6560-4176-8e45-c5a6c6d99008",
+          "message": {
+            "author": {
+              "role": "assistant"
+            },
+            "content": {
+              "content_type": "text",
+              "parts": [
+                "Here\u2019s a checklist to help you manage Experiment logging more effectively..."
+              ]
+            },
+            "create_time": "2025-04-05T20:30:31.596787Z"
+          }
+        }
+      }
+    }
+  ]
+}
