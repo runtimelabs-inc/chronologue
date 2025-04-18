@@ -27,7 +27,7 @@ DTSTAMP:20250424T170000Z
 DTSTART:20250424T170000Z
 DTEND:20250424T180000Z
 SUMMARY:Send Cookbook to Collaborators
-DESCRIPTION:Package and share demo with OpenAI and Google collaborators for feedback.
+DESCRIPTION:Package and share demo with collaborators for feedback.
 LOCATION:
 STATUS:CONFIRMED
 END:VEVENT
