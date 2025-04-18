@@ -5,7 +5,7 @@ from pathlib import Path
 from schema import validate_memory_trace
 
 def generate_uid(title: str, date_str: str) -> str:
-    # Simplify UID format to match gold standard
+    # Simplify UID format to match standard ics format 
     base = title.lower().replace(" ", "_").replace("/", "_").replace("°", "").replace("#", "")
     return f"{base}-{date_str}@memorysystem.ai"
 
