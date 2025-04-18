@@ -1,4 +1,6 @@
-# schema.py
+# validate_schema.py
+# Validate the schema of memory traces (useful for debugging individual files)
+
 from typing import Dict, List
 from datetime import datetime
 import json
@@ -114,7 +116,9 @@ def export_to_ics(trace: dict, output_path: str) -> None:
     event.end = trace["end"]
 
 if __name__ == "__main__":
-    test_path = os.path.join("..", "data", "conversation", "raw", "lab_manager_4-12.json")
+    
+    test_path = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/conversation/raw/lab_manager_4-12.json")
+    
     try:
         valid = validate_trace_file(test_path)
         print("\nAll traces valid " if valid else "\nSome traces are invalid ")
