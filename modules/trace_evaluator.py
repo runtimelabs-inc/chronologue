@@ -90,7 +90,6 @@ def cluster_traces_faiss(traces: List[Dict], n_clusters: int = 5) -> List[Dict]:
     return traces
 
 
-
 if __name__ == "__main__":
     
     # Use in demo to visualize traces
