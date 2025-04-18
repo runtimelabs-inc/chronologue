@@ -39,7 +39,7 @@ This repository converts structured memory traces (stored as `.json`) into `.ics
 
 ```bash 
 git clone https://github.com/dr2633/Chronologue.git
-cd Chronologue
+cd chronologue
 ```
 
 2. **Set your API Keys**
@@ -82,6 +82,7 @@ python modules/import_ics.py
 ```
 
 In the CLI, you can:
+
 - Load a synthetic user trace
 - Build embeddings
 - Run a planning query

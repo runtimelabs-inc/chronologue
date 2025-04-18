@@ -1,6 +1,10 @@
+# import_ics.py
+
 from datetime import datetime
 from typing import List, Dict
 import re
+import json
+from pathlib import Path
 
 def parse_ics_datetime(dt_str: str) -> str:
     """Convert iCalendar datetime string to ISO 8601 format."""
@@ -54,9 +58,25 @@ def import_ics(filepath: str) -> List[Dict]:
     print(f"→ Imported {len(events)} event(s) from {filepath}")
     return events
 
+def save_events_to_json(events: List[Dict], output_path: str) -> None:
+    """Save the list of events to a JSON file."""
+    with open(output_path, 'w') as json_file:
+        json.dump(events, json_file, indent=4)
+    print(f"→ Events saved to {output_path}")
+
+def import_ics_from_directory(input_dir: Path, output_dir: Path) -> None:
+    """Import events from all iCalendar (.ics) files in a directory and save each to a JSON file."""
+    for ics_file in input_dir.glob("*.ics"):
+        print(f"→ Reading iCalendar file: {ics_file}")
+        events = import_ics(str(ics_file))
+        # Generate output filename based on input filename
+        output_file = output_dir / (ics_file.stem + ".json")
+        save_events_to_json(events, str(output_file))
+
 if __name__ == "__main__":
     
-    filepath = "/Users/derekrosenzweig/Documents/GitHub/Chronologue/data/calendar/raw/lab_manager_4-12.ics"  
-    events = import_ics(filepath)
-    for event in events:
-        print(event)
+    input_dir = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/calendar/raw")
+    output_dir = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/calendar/processed")
+    import_ics_from_directory(input_dir, output_dir)
+
+    

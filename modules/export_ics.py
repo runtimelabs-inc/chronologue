@@ -133,6 +133,6 @@ END:VEVENT"""
 if __name__ == "__main__":
     test_ics_format()
     # Original main code
-    input_dir = Path("/Users/derekrosenzweig/Documents/GitHub/mmcr-memory-system/data/conversation/raw")
-    output_dir = Path("/Users/derekrosenzweig/Documents/GitHub/mmcr-memory-system/data/conversation/processed")
+    input_dir = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/conversation/raw")
+    output_dir = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/conversation/processed")
     convert_json_folder_to_ics(input_dir, output_dir)
