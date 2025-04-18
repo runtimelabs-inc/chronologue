@@ -1,25 +1,27 @@
-## Chronologue: Personal Memory with Calendar API integration 🗓️
+## Chronologue: Time-Stamped Memory Traces with Calendar Integration 🗓️
 
-> *Memory of user context conditions the future distribution of responses that a language model will sample from.*
+**A calendar interface for reviewing and structuring agent memory**
 
-> *We make ourselves intelligent by designing environments that contain relevant information and make them accessible to our future selves.*  
+**Grounding conversation history and task scheduling in personal timelines**
+
+> *Memory systems grounded in user context condition the future distribution of responses that a language model will sample from.*
+
+> *We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.*  
 > — [Donald Norman](https://jnd.org/)
 
 > *Time is a core substrate for intelligent behavior.* 
-
 
 ### Introduction 
 
 As we develop environments for agents, agents will design environments for us. Enabling this feedback loop between user behavior, interface design, and agent orchestration and scheduling is one of the defining challenges and promises of the next phase of model development. 
 
-We aim to build agents that not only plan and act on our behalf but also structure and store information that are accessible and steerable for developers. That is, we need to focus on designing environments that human users trust and readily interact with. 
+We aim to build agents that not only act on our behalf but also structure and store information that are accessible and steerable for developers. That is, we need to focus on designing environments that human users already trust and readily interact with. 
 
-Calendars are a familiar interface for storing event information, planning, and externalizing memory for individuals and organization. 
+Calendars are a familiar interface for storing event information, planning, and externalizing memory for both individuals and organization. 
 
 <img src="figures/calendar-example.png" width="400">
 
 This repository converts structured memory traces (stored as `.json`) into `.ics` calendar files, enabling users to visualize and revisit key events — particularly conversation history with language models — within their preferred calendar tools (Apple Calendar, Google Calendar, Outlook).
-
 
 ##### Key Features and Workflow 
 
@@ -86,7 +88,7 @@ In the CLI, you can:
 - Load a synthetic user trace
 - Build embeddings
 - Run a planning query
-- (Optionally) schedule a reminder in your Google Calendar
+- Schedule a reminder in your Google Calendar
 
 ### System Overview
 
