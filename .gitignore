@@ -3,6 +3,7 @@
 /scratch
 /calendar/credentials.json
 .venv
+.DS_Store
 
 
 

@@ -99,6 +99,9 @@ if __name__ == "__main__":
 
 
 
+# https://developers.google.com/identity/protocols/oauth2
+
+
 # When running this script you may run into an error regaring the Google verification process 
 
 # cursor-calendar has not completed the Google verification process. The app is currently being tested, and can only be accessed by developer-approved testers. If you think you should have access, contact the developer.

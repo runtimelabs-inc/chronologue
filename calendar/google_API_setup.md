@@ -66,3 +66,5 @@ Here is a sguide to walk through creating OAuth 2.0 credentials to enable access
 
 
 
+<!-- https://developers.google.com/identity/protocols/oauth2/production-readiness/brand-verification?hl=en#projects-used-in-dev-test-stage -->
+
