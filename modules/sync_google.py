@@ -95,3 +95,6 @@ if __name__ == "__main__":
     service = authenticate_google()
     memory_path = Path("data/conversation/raw/lab_manager_crispr.json")
     sync_memory_file_to_google_calendar(service, memory_path)
+
+
+# Set path that uses filename 

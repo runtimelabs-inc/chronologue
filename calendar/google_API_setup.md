@@ -1,5 +1,8 @@
 ### Setting Up Google Calendar API Credentials 
 
+- [Google Calendar API Overview](https://developers.google.com/workspace/calendar/api/guides/overview)
+
+
 Here is a sguide to walk through creating OAuth 2.0 credentials to enable access to the Google Calendar API for the script `modules/sync_google.py`. 
 
 

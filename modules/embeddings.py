@@ -62,3 +62,5 @@ if __name__ == "__main__":
             print(f"[Error] File not found: {input_file.resolve()}")
 
 # # Vector embeddings: https://platform.openai.com/docs/guides/embeddings 
+# Add for ics to json 
+# Markdown table outputs 
