@@ -26,8 +26,8 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 def authenticate_google():
     creds = None
-    token_path = Path("../calendar/token.json")
-    creds_path = Path("../calendar/credentials.json")  # downloaded from Google Cloud Console
+    token_path = Path("./calendar/token.json")
+    creds_path = Path("./calendar/credentials.json")  # downloaded from Google Cloud Console
 
     if token_path.exists():
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
@@ -97,4 +97,27 @@ if __name__ == "__main__":
     sync_memory_file_to_google_calendar(service, memory_path)
 
 
-# Set path that uses filename 
+
+
+# When running this script you may run into an error regaring the Google verification process 
+
+# cursor-calendar has not completed the Google verification process. The app is currently being tested, and can only be accessed by developer-approved testers. If you think you should have access, contact the developer.
+# If you are a developer of cursor-calendar, see error details.
+# Error 403: access_denied
+
+# Submit for Brand Verification 
+# https://developers.google.com/identity/protocols/oauth2/production-readiness/brand-verification?hl=en#projects-used-in-dev-test-stage
+
+# The OAuth consent screen brand verification process typically takes 2-3 business days after you submit for verification.
+
+# OAuth App Verification
+# https://support.google.com/cloud/answer/13463073?visit_id=638809327007167460-1341605746&rd=1#verification-types
+
+# Submit for Verification 
+# https://support.google.com/cloud/answer/13461325?sjid=10551380289315301369-NC
+
+# Enable Calendar API 
+# https://console.cloud.google.com/marketplace/product/google/calendar-json.googleapis.com?project=memorysystem-ai
+
+# gcloud services enable calendar-json.googleapis.com
+
