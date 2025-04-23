@@ -138,6 +138,7 @@ Run server for Google Calendar:
 
 ```
 mcp dev mcp/server_calendar.py
+mcp dev mcp/server_google_calendar.py
 ```
 
 

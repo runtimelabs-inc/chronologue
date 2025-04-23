@@ -20,14 +20,12 @@ def authenticate_google():
     token_path = Path("calendar/token.json")
     creds_path = Path("calendar/credentials.json")
 
-    creds = None
-    if token_path.exists():
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
-    if not creds or not creds.valid:
-        flow = InstalledAppFlow.from_client_secrets_file(str(creds_path), SCOPES)
-        creds = flow.run_local_server(port=0)
-        with open(token_path, "w") as token:
-            token.write(creds.to_json())
+    if not token_path.exists():
+        raise RuntimeError("Token not found. Run auth_setup.py first.")
+
+    creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+    return build("calendar", "v3", credentials=creds)
+
 
     return build("calendar", "v3", credentials=creds)
 
