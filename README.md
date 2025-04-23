@@ -36,53 +36,93 @@ This repository converts structured memory traces (stored as `.json`) into `.ics
 
 ---
 
-### Getting Started 
+### Getting Started
 
-1. **Clone the Repository** 
+1. **Install `uv`**
 
-```bash 
-git clone https://github.com/dr2633/Chronologue.git
-cd chronologue
-```
+   If `uv` is not already installed, you can install it using the following command:
 
-2. **Set your API Keys**
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
 
-In .env file: 
+2. **Clone the Repository**
 
-```
-OPENAI_API_KEY=your-openai-key
-CLAUDE_API_KEY=your-anthropic-key
-GEMINI_API_KEY=your-gemini-key
-LLAMA_API_KEY=your-meta-key
+   Clone the repository and navigate into it:
 
-GOOGLE_CLIENT_CREDENTIALS=calendar/credentials.json
-GOOGLE_TOKEN_FILE=calendar/token.json
-```
+   ```bash
+   git clone https://github.com/dr2633/Chronologue.git
+   cd chronologue
+   ```
 
-Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python). 
+3. **Initialize Project with `uv`**
 
+   Initialize the project using `uv`:
 
-3. **Convert from JSON Chat History to ICS Format for Calendar** 
+   ```bash
+   uv init
+   ```
 
-Run the following script to transform sample `.json` data to `.ics`: 
+4. **Create Virtual Environment**
 
-```bash 
-python modules/export_ics.py
-```
+   Create a virtual environment and activate it:
 
-Optional: Generate embeddings for conversation history
+   ```bash
+   uv venv
+   source .venv/bin/activate
+   ```
 
-```bash
-python modules/embeddings.py
-```
+5. **Add Core Dependencies**
 
-4. **Convert Calendar Data to Model Input** 
+   Add core dependencies using `uv`:
 
-Run the following script to transform sample `.ics` files to `.json`: 
+   ```bash
+   uv add "mcp[cli]" httpx
+   ```
 
-```bash
-python modules/import_ics.py
-```
+   (Optional) Install from `requirements.txt` if legacy dependencies exist:
+
+   ```bash
+   uv pip install -r requirements.txt
+   ```
+
+6. **Set Your API Keys**
+
+   In the `.env` file, set your API keys:
+
+   ```plaintext
+   OPENAI_API_KEY=your-openai-key
+   CLAUDE_API_KEY=your-anthropic-key
+   GEMINI_API_KEY=your-gemini-key
+   LLAMA_API_KEY=your-meta-key
+
+   GOOGLE_CLIENT_CREDENTIALS=calendar/credentials.json
+   GOOGLE_TOKEN_FILE=calendar/token.json
+   ```
+
+   Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python).
+
+7. **Convert from JSON Chat History to ICS Format for Calendar**
+
+   Run the following script to transform sample `.json` data to `.ics`:
+
+   ```bash
+   python modules/export_ics.py
+   ```
+
+   Optional: Generate embeddings for conversation history
+
+   ```bash
+   python modules/embeddings.py
+   ```
+
+8. **Convert Calendar Data to Model Input**
+
+   Run the following script to transform sample `.ics` files to `.json`:
+
+   ```bash
+   python modules/import_ics.py
+   ```
 
 In the CLI, you can:
 
