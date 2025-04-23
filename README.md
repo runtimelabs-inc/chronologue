@@ -78,7 +78,14 @@ This repository converts structured memory traces (stored as `.json`) into `.ics
 
    ```bash
    uv add "mcp[cli]" httpx
+   uv run mcp
    ```
+
+If developing locally 
+
+```
+brew install node
+```
 
    (Optional) Install from `requirements.txt` if legacy dependencies exist:
 
@@ -142,7 +149,7 @@ This system is organized into modular components for:
 - **Evaluation**: manifold analysis (MMCR) and memory trace logging
 
 
-See [dataset guide](../data/dataset-guide.md) for more details and description of fields included as part of standardized `.ics` format. 
+See [dataset guide](./data/dataset-guide.md) for more details and description of fields included as part of standardized `.ics` format. 
 
 ---
 
