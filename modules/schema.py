@@ -27,7 +27,7 @@ def validate_memory_trace(trace: Dict) -> bool:
     """
     try:
         # Check required fields
-        for field in REQUIRED_FIELDS:
+        for field ian REQUIRED_FIELDS:
             if field not in trace:
                 print(f"Missing required field: {field}")
                 return False

@@ -4,8 +4,7 @@
 
 > *Memory systems grounded in user context condition the future distribution of responses that a language model will sample from.*
 
-> *We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.*  
-> — [Donald Norman](https://jnd.org/)
+> *We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.*  — [Donald Norman](https://jnd.org/)
 
 > *Time is a core substrate for intelligent behavior.* 
 
