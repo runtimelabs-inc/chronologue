@@ -74,24 +74,27 @@ This repository converts structured memory traces (stored as `.json`) into `.ics
 
 5. **Add Core Dependencies**
 
-   Add core dependencies using `uv`:
 
-   ```bash
-   uv add "mcp[cli]" httpx
-   uv run mcp
-   ```
-
-If developing locally 
-
-```
-brew install node
-```
-
-   (Optional) Install from `requirements.txt` if legacy dependencies exist:
+  Install from `requirements.txt` if legacy dependencies exist:
 
    ```bash
    uv pip install -r requirements.txt
    ```
+
+   Add core dependencies using `uv`:
+
+   ```bash
+   uv add "mcp[cli]" httpx
+   ```
+
+If developing locally 
+```
+brew install node
+```
+Run MCP Integration
+```
+uv run mcp
+```
 
 6. **Set Your API Keys**
 
