@@ -2,6 +2,7 @@
 /docs
 /scratch
 /calendar/credentials.json
+/calendar/token.json
 .venv
 .DS_Store
 
