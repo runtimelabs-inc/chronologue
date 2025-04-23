@@ -93,8 +93,14 @@ def sync_memory_file_to_google_calendar(service, memory_json_path: Path):
 
 if __name__ == "__main__":
     service = authenticate_google()
-    memory_path = Path("data/conversation/raw/lab_manager_crispr.json")
+    memory_path = Path("data/conversation/raw/lab_manager_4-12.json")
     sync_memory_file_to_google_calendar(service, memory_path)
+
+
+
+
+
+
 
 
 
