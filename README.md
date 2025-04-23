@@ -126,6 +126,21 @@ uv run mcp
    python modules/embeddings.py
    ```
 
+**Run MCP Server Integration** 
+
+Optional verification with sample server: 
+
+```
+mcp dev mcp/server-verifier.py
+```
+
+Run server for Google Calendar: 
+
+```
+mcp dev mcp/server.py
+```
+
+
 8. **Convert Calendar Data to Model Input**
 
    Run the following script to transform sample `.ics` files to `.json`:

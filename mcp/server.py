@@ -1,7 +1,6 @@
 import asyncio
-from mcp import Server, Tool
 from mcp.server.stdio import stdio_server
-from modules.sync_google import authenticate_google, sync_memory_file_to_google_calendar
+from modules.sync_google_ics import authenticate_google, parse_ics_and_sync
 from modules.embeddings import get_openai_embedding
 from pathlib import Path
 
@@ -25,7 +24,7 @@ class MemorySyncServer(Server):
         ]
 
     async def call_tool(self, tool_name, tool_args):
-        if tool_name == "sync_to_google_calendar":
+        if tool_name == " parse_ics_and_sync":
             memory_json_path = Path(tool_args)
             if not memory_json_path.exists():
                 return {"error": f"File not found: {memory_json_path}"}
@@ -46,3 +45,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+# 
