@@ -1,0 +1,20 @@
+{
+    "servers": {
+      "calendar": {
+        "command": "docker",
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-v",
+          "${workspaceFolder}/calendar:/app/calendar",
+          "-e",
+          "GOOGLE_TOKEN_PATH=/app/calendar/token.json",
+          "-e",
+          "GOOGLE_OAUTH_PATH=/app/calendar/credentials.json",
+          "calendar-mcp"
+        ]
+      }
+    }
+  }
+  
