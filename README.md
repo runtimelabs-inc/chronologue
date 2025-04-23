@@ -137,7 +137,7 @@ mcp dev mcp/server-verifier.py
 Run server for Google Calendar: 
 
 ```
-mcp dev mcp/server.py
+mcp dev mcp/server_calendar.py
 ```
 
 
