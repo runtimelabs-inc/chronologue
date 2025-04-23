@@ -1,7 +1,7 @@
 ## Chronologue: Time-Stamped Memory Traces with Calendar Integration 🗓️
 
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 
 
 **A calendar interface for reviewing and structuring agent memory**
