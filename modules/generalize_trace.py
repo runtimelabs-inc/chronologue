@@ -9,7 +9,7 @@ generalize_trace.py
 """
 
 import openai
-from modules.schema import validate_memory_trace
+from schema import validate_memory_trace
 from datetime import datetime
 import json
 
@@ -77,3 +77,6 @@ if __name__ == "__main__":
     print("== Personal Response ==")
     print(response)
     print("\n== Generalized Trace written to ==", args.output)
+
+
+# python modules/generalize_trace.py --input ..data/conversation/raw/lab_manager_4-12.json --output ..data/conversation/raw/lab_manager_4-12.json
