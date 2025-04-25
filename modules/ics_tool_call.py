@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import json
 from export_ics import generate_ics_string, write_consolidated_ics
+# Assuming schema.py is in the same directory
 from schema import validate_memory_trace
 from pathlib import Path
 
@@ -49,9 +50,7 @@ def call_openai_tool(trace: dict) -> dict:
             "type": "function",
             "function": {
                 "name": "generate_event_ics",
-                "arguments": {
-                    "trace": trace
-                }
+                "arguments": json.dumps({"trace": trace})
             }
         }
     )
@@ -85,8 +84,10 @@ def convert_json_folder_to_ics_with_tool_call(input_dir: Path, output_dir: Path)
                 if validate_memory_trace(processed_trace):
                     vevent = generate_ics_string(processed_trace)
                     vevents.append(vevent)
+
+                    
                 else:
-                    print(f"[!] Trace failed validation after tool call: {trace['id']}")
+                    print(f"[!] Trace failed validation after tool call: {trace.get('id', 'UNKNOWN')}")
             except Exception as e:
                 print(f"[!] Error processing trace {trace.get('id', 'UNKNOWN')}: {e}")
 

@@ -1,24 +1,13 @@
-# schema.py
 from typing import Dict, List
 from datetime import datetime
 import json
 import os
 
-# Required and allowed fields
-REQUIRED_FIELDS = [
-    "id",
-    "type",
-    "timestamp",
-    "content",
-    "task_id"
-]
-
-
-## Review allowed types (ie. priors)
+# Allowed values for trace fields
+REQUIRED_FIELDS = ["id", "type", "timestamp", "content", "task_id"]
 ALLOWED_TYPES = {"goal", "observation", "reflection", "calendar_event"}
 ALLOWED_COMPLETION_STATUSES = {"pending", "done", "scheduled", "canceled"}
 ALLOWED_VISIBILITY = {"private", "shared", "public"}
-
 
 def validate_memory_trace(trace: Dict) -> bool:
     """
@@ -29,46 +18,58 @@ def validate_memory_trace(trace: Dict) -> bool:
         # Check required fields
         for field in REQUIRED_FIELDS:
             if field not in trace:
-                print(f"Missing required field: {field}")
+                print(f"[!] Missing required field: {field}")
                 return False
 
         # Validate trace type
         if trace["type"] not in ALLOWED_TYPES:
-            print(f"Invalid type: {trace['type']}")
+            print(f"[!] Invalid type: {trace['type']}")
             return False
 
-        # Validate timestamp format
+        # Validate timestamp
         datetime.fromisoformat(trace["timestamp"].replace("Z", "+00:00"))
 
-        # Optional field validations
+        # Optional field: importance
         if "importance" in trace:
-            val = float(trace["importance"])
-            if not (0.0 <= val <= 1.0):
-                print("Importance must be between 0.0 and 1.0")
+            importance = float(trace["importance"])
+            if not (0.0 <= importance <= 1.0):
+                print("[!] Importance must be between 0.0 and 1.0")
                 return False
 
+        # Optional field: collaborators
         if "collaborators" in trace and not isinstance(trace["collaborators"], list):
-            print("Collaborators must be a list")
+            print("[!] Collaborators must be a list")
             return False
 
+        # Optional field: embedding
         if "embedding" in trace and not isinstance(trace["embedding"], list):
-            print("Embedding must be a list of floats")
+            print("[!] Embedding must be a list of floats")
             return False
 
+        # Optional field: completion_status
         if "completion_status" in trace and trace["completion_status"] not in ALLOWED_COMPLETION_STATUSES:
-            print(f"Invalid completion_status: {trace['completion_status']}")
+            print(f"[!] Invalid completion_status: {trace['completion_status']}")
             return False
 
-        if "linked_event_uid" in trace and not isinstance(trace["linked_event_uid"], str):
-            print("linked_event_uid must be a string")
-            return False
-
+        # Optional field: visibility
         if "visibility" in trace and trace["visibility"] not in ALLOWED_VISIBILITY:
-            print(f"Invalid visibility: {trace['visibility']}")
+            print(f"[!] Invalid visibility: {trace['visibility']}")
             return False
+
+        # Optional field: linked_event_uid
+        if "linked_event_uid" in trace and not isinstance(trace["linked_event_uid"], str):
+            print("[!] linked_event_uid must be a string")
+            return False
+
+        # Optional field: duration_minutes
+        if "duration_minutes" in trace:
+            duration = int(trace["duration_minutes"])
+            if duration <= 0 or duration > 1440:
+                print("[!] duration_minutes must be a positive integer <= 1440")
+                return False
 
     except Exception as e:
-        print(f"Validation error: {e}")
+        print(f"[!] Validation error: {e}")
         return False
 
     return True
@@ -86,24 +87,19 @@ def validate_trace_file(path: str) -> bool:
     all_valid = True
     for trace in traces:
         is_valid = validate_memory_trace(trace)
-        print(f"Trace {trace['id']}: {'✅ Valid' if is_valid else '❌ Invalid'}")
+        print(f"Trace {trace['id']}: {'Valid' if is_valid else 'Invalid'}")
         if not is_valid:
             all_valid = False
     return all_valid
 
 
+# Optional: ICS export example (not actively used if using custom writer)
 from ics import Calendar, Event
-from datetime import datetime
 from pathlib import Path
-import pytz
 
 def export_to_ics(trace: dict, output_path: str) -> None:
     """
     Converts a single memory trace into a .ics calendar file and saves it.
-
-    Args:
-        trace (dict): A memory trace with type 'calendar_event' and required fields.
-        output_path (str): File path to save the .ics file.
     """
     cal = Calendar()
     event = Event()
@@ -113,12 +109,15 @@ def export_to_ics(trace: dict, output_path: str) -> None:
     event.begin = trace["start"]
     event.end = trace["end"]
 
+    cal.events.add(event)
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w") as f:
+        f.writelines(cal.serialize_iter())
+
 if __name__ == "__main__":
     test_path = os.path.join("..", "data", "conversation", "raw", "lab_manager_4-12.json")
     try:
         valid = validate_trace_file(test_path)
-        print("\nAll traces valid " if valid else "\nSome traces are invalid ")
+        print("\nAll traces valid" if valid else "\nSome traces are invalid")
     except Exception as e:
         print(f"Error: {e}")
-
-
