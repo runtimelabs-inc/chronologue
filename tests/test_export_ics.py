@@ -1,41 +1,70 @@
 # tests/test_export_ics.py
-import os
-import sys
 
-# Add the parent directory to the sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# PYTHONPATH=. pytest tests/test_export_ics.py
 
-from modules.schema import validate_memory_trace
+import pytest
+from pathlib import Path
+from chronologue_modules.export_ics import generate_ics_string, write_consolidated_ics
 
-def test_generate_ics_string():
-    event = {
-        "title": "Test ICS Export",
-        "description": "Test exporting an event to .ics format.",
-        "start": "2025-05-01T10:00:00",
-        "end": "2025-05-01T10:30:00",
-        "location": "Zoom",
-        "organizer_email": "agent@memorysystem.ai"
+def test_generate_ics_default_duration():
+    trace = {
+        "id": "default-duration-test",
+        "type": "calendar_event",
+        "timestamp": "2025-04-25T08:00:00Z",
+        "content": "Morning standup with team",
+        "task_id": "team_sync",
+        "location": "zoom_link_here"
     }
-    ics_string = export_ics.generate_ics_string(event)
-    assert "BEGIN:VEVENT" in ics_string
-    assert "SUMMARY:Test ICS Export" in ics_string
-    assert "DESCRIPTION:Test exporting an event to .ics format." in ics_string
-    assert "LOCATION:Zoom" in ics_string
 
+    ics = generate_ics_string(trace)
+    assert "DTSTART:20250425T080000Z" in ics
+    assert "DTEND:20250425T083000Z" in ics  # Default is 30 minutes
+    assert "SUMMARY:Morning standup with team" in ics
 
-def test_export_to_ics(tmp_path):
-    event = {
-        "title": "Test Write ICS",
-        "description": "Check that file is written correctly.",
-        "start": "2025-05-01T14:00:00",
-        "end": "2025-05-01T14:30:00",
-        "location": "Online"
+def test_generate_ics_custom_duration_with_long_summary():
+    trace = {
+        "id": "custom-duration-test",
+        "type": "calendar_event",
+        "timestamp": "2025-04-25T10:00:00Z",
+        "content": "Deep work session on CUDA optimization and benchmarking kernels",
+        "task_id": "gpu_project",
+        "location": "office",
+        "duration_minutes": 90
     }
-    file_path = tmp_path / "test_event.ics"
-    export_ics.export_to_ics(event, str(file_path))
 
-    assert file_path.exists()
-    content = file_path.read_text()
-    assert "BEGIN:VCALENDAR" in content
-    assert "SUMMARY:Test Write ICS" in content
-    assert "LOCATION:Online" in content
+    ics = generate_ics_string(trace)
+    assert "DTSTART:20250425T100000Z" in ics
+    assert "DTEND:20250425T113000Z" in ics
+    assert "SUMMARY:Deep work session on CUDA optimizati..." in ics
+def test_generate_ics_custom_duration_with_long_summary():
+    trace = {
+        "id": "custom-duration-test",
+        "type": "calendar_event",
+        "timestamp": "2025-04-25T10:00:00Z",
+        "content": "Deep work session on CUDA optimization and benchmarking kernels",
+        "task_id": "gpu_project",
+        "location": "office",
+        "duration_minutes": 90
+    }
+
+    ics = generate_ics_string(trace)
+    assert "DTSTART:20250425T100000Z" in ics
+    assert "DTEND:20250425T113000Z" in ics
+    assert "\nSUMMARY:Deep work session on CUDA optimizati..." in ics
+
+
+def test_generate_ics_summary_exactly_40_chars():
+    trace = {
+        "id": "exact-length-test",
+        "type": "calendar_event",
+        "timestamp": "2025-04-25T11:00:00Z",
+        "content": "This string has exactly forty characters!",
+        "task_id": "length_test",
+        "location": "test_lab",
+        "duration_minutes": 45
+    }
+
+    ics = generate_ics_string(trace)
+    assert "DTSTART:20250425T110000Z" in ics
+    assert "DTEND:20250425T114500Z" in ics
+    assert "\nSUMMARY:This string has exactly forty characters!" in ics
