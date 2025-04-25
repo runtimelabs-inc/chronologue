@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timedelta
 from pathlib import Path
 from schema import validate_memory_trace
-from openai import OpenAI  # Requires OpenAI Python client
+from openai import OpenAI  
 
 client = OpenAI()
 

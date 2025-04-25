@@ -1,0 +1,91 @@
+BEGIN:VCALENDARVERSION:2.0PRODID:-//MemorySystem//ENBEGIN:VEVENT
+UID:deployment-20250401@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250401T090000Z
+DTEND:20250401T093000Z
+SUMMARY:Deployment Kickoff
+DESCRIPTION:Reviewed deployment objectives and finalized site selection for mobile bio-sensor testing.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:supply-check-20250401@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250401T140000Z
+DTEND:20250401T143000Z
+SUMMARY:Equipment Loadout
+DESCRIPTION:Packed mobile kits, validated reagent checklist, and confirmed field gear manifest.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:travel-20250402@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250402T080000Z
+DTEND:20250402T083000Z
+SUMMARY:Transit to Site A
+DESCRIPTION:Departed for Site A (AgriTech greenhouse), completed setup by noon.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:calibration-20250402@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250402T140000Z
+DTEND:20250402T143000Z
+SUMMARY:Sensor Calibration
+DESCRIPTION:Calibrated all 4 biosensor units; ran baseline tests with mock analyte samples.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:data-collection-20250403@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250403T090000Z
+DTEND:20250403T093000Z
+SUMMARY:Initial Sample Run
+DESCRIPTION:Collected soil and air samples; noted drift in humidity values on Unit 3.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:incident-log-20250403@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250403T133000Z
+DTEND:20250403T140000Z
+SUMMARY:Sensor Fault Investigation
+DESCRIPTION:Logged and isolated fault in Unit 3 sensor array; replaced capacitor module.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:travel-20250404@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250404T100000Z
+DTEND:20250404T103000Z
+SUMMARY:Transit to Site B
+DESCRIPTION:Relocated team to Site B (wetland study area); began setup in elevated humidity conditions.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:data-run-b-20250405@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250405T090000Z
+DTEND:20250405T093000Z
+SUMMARY:Data Collection at Site B
+DESCRIPTION:Completed sample collection; significant signal spike in phosphate readings.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:review-20250406@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250406T110000Z
+DTEND:20250406T113000Z
+SUMMARY:Mid-Mission Review
+DESCRIPTION:Analyzed Site A/B data; identified trends and refined analysis protocols for Site C.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTBEGIN:VEVENT
+UID:planning-c-20250407@memorysystem.ai
+DTSTAMP:20250425T174755Z
+DTSTART:20250407T093000Z
+DTEND:20250407T100000Z
+SUMMARY:Site C Planning Session
+DESCRIPTION:Outlined approach for high-salinity testing at coastal site; reviewed team readiness.
+LOCATION:
+STATUS:CONFIRMED
+END:VEVENTEND:VCALENDAR
