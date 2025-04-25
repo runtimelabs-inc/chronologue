@@ -1,0 +1,19 @@
+[
+    {
+      "id": "p1",
+      "prompt": "Review my activity on April 2nd."
+    },
+    {
+      "id": "p2",
+      "prompt": "What happened between April 3rd and April 6th?"
+    },
+    {
+      "id": "p3",
+      "prompt": "Review all data collection events across both sites. Provide a high level summary  of the events."
+    },
+    {
+        "id": "p4",
+        "prompt": "Provide a forward looking task list and timeline for follow up activities"
+      }
+  ]
+  
