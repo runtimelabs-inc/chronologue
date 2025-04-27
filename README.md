@@ -113,13 +113,19 @@ uv run mcp
 
 7. **Convert from JSON Chat History to ICS Format for Calendar**
 
-   Run the following script to transform sample `.json` data to `.ics`:
+   Run the following script to transform `.json` data to `.ics`:
 
    ```bash
    python modules/export_ics.py
    ```
 
-   Optional: Generate embeddings for conversation history
+   Run this script to transform `.ics` to `.json` data for model context: 
+
+   ```bash
+   python modules/import_ics.py
+   ```
+
+   Generate embeddings from conversation history
 
    ```bash
    python modules/embeddings.py
@@ -127,7 +133,10 @@ uv run mcp
 
 **Run MCP Server Integration** 
 
-Optional verification with sample server: 
+Chronologue integrates structured memory traces, natural language input, and calendar-based coordination through a unified interface. It relies on the [**Model Context Protocol (MCP)**](https://github.com/modelcontextprotocol) to connect user input with event memory, agent reasoning, and calendar output.
+
+
+Verification with sample server: 
 
 ```
 mcp dev mcp/server-verifier.py
