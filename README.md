@@ -186,7 +186,7 @@ This workflow allows for persistent, time-aware context grounding, enabling lang
 
 --- 
 
-### Example: Model Output Converted to iCalendar Format
+### Example Workflow: Model Output Converted to iCalendar Format
 Suppose a model generates the following JSON:
 ```json
 {
