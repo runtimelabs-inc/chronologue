@@ -103,7 +103,6 @@ uv run mcp
    OPENAI_API_KEY=your-openai-key
    CLAUDE_API_KEY=your-anthropic-key
    GEMINI_API_KEY=your-gemini-key
-   LLAMA_API_KEY=your-meta-key
 
    GOOGLE_CLIENT_CREDENTIALS=calendar/credentials.json
    GOOGLE_TOKEN_FILE=calendar/token.json
