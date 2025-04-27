@@ -1,4 +1,4 @@
-## Chronologue: Calendar-Grounded Memory and Programmable Interface for Agent Planning 🗓️
+## Chronologue: Calendar-Grounded Memory and Interface for Agent Planning 🗓️
 
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
 
