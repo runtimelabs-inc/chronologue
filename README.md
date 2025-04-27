@@ -109,7 +109,7 @@ uv run mcp
    GOOGLE_TOKEN_FILE=calendar/token.json
    ```
 
-   Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python) and [user guide](calendar/google_API_setup.md).
+   Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python) and [User Guide](calendar/google_API_setup.md).
 
 7. **Convert from JSON Chat History to ICS Format for Calendar**
 
