@@ -1,4 +1,4 @@
-## Chronologue: Time-Stamped Memory Traces with Calendar Integration 🗓️
+## Chronologue: Calendar-Grounded Memory and Programmable Interface for Agent Planning 🗓️
 
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
 
