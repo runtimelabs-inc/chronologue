@@ -1,10 +1,9 @@
-## Chronologue: Time-Stamped Memory Traces with Calendar Integration 🗓️
+## Chronologue: Calendar-Grounded Memory and Interface for Agent Planning 🗓️
 
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
 
 
-
-**A calendar interface for reviewing and structuring agent memory**
+**Bridging familiar calendar interfaces to responsive and adaptable timelines for users and agents, designed for conversation, context, and memory.**
 
 > *Memory systems grounded in user context condition the future distribution of responses that a language model will sample from.*
 
@@ -104,23 +103,28 @@ uv run mcp
    OPENAI_API_KEY=your-openai-key
    CLAUDE_API_KEY=your-anthropic-key
    GEMINI_API_KEY=your-gemini-key
-   LLAMA_API_KEY=your-meta-key
 
    GOOGLE_CLIENT_CREDENTIALS=calendar/credentials.json
    GOOGLE_TOKEN_FILE=calendar/token.json
    ```
 
-   Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python).
+   Set your Calendar API for Integration by following the [Google Calendar API setup](https://developers.google.com/calendar/api/quickstart/python) and [User Guide](calendar/google_API_setup.md).
 
 7. **Convert from JSON Chat History to ICS Format for Calendar**
 
-   Run the following script to transform sample `.json` data to `.ics`:
+   Run the following script to transform `.json` data to `.ics`:
 
    ```bash
    python modules/export_ics.py
    ```
 
-   Optional: Generate embeddings for conversation history
+   Run this script to transform `.ics` to `.json` data for model context: 
+
+   ```bash
+   python modules/import_ics.py
+   ```
+
+   Generate embeddings from conversation history
 
    ```bash
    python modules/embeddings.py
@@ -128,7 +132,10 @@ uv run mcp
 
 **Run MCP Server Integration** 
 
-Optional verification with sample server: 
+Chronologue integrates structured memory traces, natural language input, and calendar-based coordination through a unified interface. It relies on the [**Model Context Protocol (MCP)**](https://github.com/modelcontextprotocol) to connect user input with event memory, agent reasoning, and calendar output.
+
+
+Verification with sample server: 
 
 ```
 mcp dev mcp/server-verifier.py
@@ -187,7 +194,7 @@ This workflow allows for persistent, time-aware context grounding, enabling lang
 
 --- 
 
-### Example: Model Output Converted to iCalendar Format
+### Example Workflow: Model Output Converted to iCalendar Format
 Suppose a model generates the following JSON:
 ```json
 {
