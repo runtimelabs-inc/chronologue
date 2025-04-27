@@ -3,8 +3,7 @@
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
 
 
-
-**A calendar interface for reviewing and structuring agent memory**
+**Bridging familiar calendar interface to programmable and responsive timelines for users and agents, designed for conversation, context, and memory.**
 
 > *Memory systems grounded in user context condition the future distribution of responses that a language model will sample from.*
 
