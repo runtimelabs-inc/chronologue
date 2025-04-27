@@ -1,4 +1,4 @@
-# Synthetic Dataset Guide
+# Dataset Guide
 
 This guide describes how to generate and structure a synthetic dataset for testing and developing memory traces, `.ics` calendar events, and integrated agent workflows.
 
@@ -267,10 +267,8 @@ They can be extended or versioned as the memory system evolves.
 
 **Testing Workflow** 
 
-Step	Action	Script
-Create trace file	Handwrite or use GPT to generate lab_manager.json	data/user_sessions/
-Validate schema	Run schema.validate_memory_trace() on all traces	schema.py
-Embed memory	Use embed_memory_traces()	embedding.py
-Rank top traces	Use rank_traces()	trace_ranker.py
-Evaluate usage	Use summarize_impact_metrics()	impact_metrics.py
-Schedule or export	Use .ics or Google Calendar API	export_ics.py, scheduler.py
+- Validate schema	Run schema.validate_memory_trace() on all traces	schema.py
+- Embed memory	Use embed_memory_traces()	embedding.py
+- Rank top traces	Use rank_traces()	trace_ranker.py
+- Evaluate usage	Use summarize_impact_metrics()	impact_metrics.py
+- Schedule or export	Use .ics or Google Calendar API	export_ics.py, scheduler.py
