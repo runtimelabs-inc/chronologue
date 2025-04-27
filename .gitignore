@@ -5,6 +5,7 @@
 /calendar/token.json
 .venv
 .DS_Store
+test_output.ics
 
 
 
