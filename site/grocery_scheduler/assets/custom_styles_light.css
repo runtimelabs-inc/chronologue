@@ -1,0 +1,57 @@
+/* --- Chronologue Light Theme --- */
+
+body, .stApp {
+    background-color: #f7f7f7;
+    color: #333333;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Sidebar Navigation Links */
+section[data-testid="stSidebar"] .css-1v3fvcr {
+    color: #333333 !important;
+    font-weight: 500;
+}
+section[data-testid="stSidebar"] .css-1v3fvcr:hover,
+section[data-testid="stSidebar"] .css-1v3fvcr:focus,
+section[data-testid="stSidebar"] .css-1v3fvcr:active {
+    color: #00c896 !important;
+    font-weight: 700;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #00c896;
+}
+
+/* Markdown Text */
+.markdown-text-container {
+    color: #333333;
+}
+
+/* Input fields */
+.stTextInput>div>div>input {
+    background-color: #f0f0f0;
+    color: #333333;
+    border-radius: 5px;
+}
+
+/* DataFrames and Editors */
+.stDataFrame, .stDataEditor {
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #00c896;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
