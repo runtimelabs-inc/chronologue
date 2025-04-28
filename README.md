@@ -148,21 +148,12 @@ mcp dev mcp/server_calendar.py
 mcp dev mcp/server_google_calendar.py
 ```
 
+Run Streamlit Command Agent for Calendar Intgration 
 
-8. **Convert Calendar Data to Model Input**
+```bash
+streamlit run modules/streamlit_chat_editor.py
+```
 
-   Run the following script to transform sample `.ics` files to `.json`:
-
-   ```bash
-   python modules/import_ics.py
-   ```
-
-In the CLI, you can:
-
-- Load a synthetic user trace
-- Build embeddings
-- Run a planning query
-- Schedule a reminder in your Google Calendar
 
 ### System Overview
 
