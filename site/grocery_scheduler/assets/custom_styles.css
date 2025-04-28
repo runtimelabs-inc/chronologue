@@ -1,0 +1,39 @@
+/* Custom Dark Theme for Chronologue Grocery Scheduler */
+
+body, .stApp {
+    background-color: #121212;
+    color: #cccccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00c896;
+}
+
+.markdown-text-container {
+    color: #cccccc;
+}
+
+.stTextInput>div>div>input {
+    background-color: #1e1e1e;
+    color: #eeeeee;
+    border-radius: 5px;
+}
+
+.stDataFrame, .stDataEditor {
+    background-color: #1e1e1e;
+    color: #eeeeee;
+}
+
+.stButton>button {
+    background-color: #00c896;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+section[data-testid="stSidebar"] {
+    background-color: #1e1e1e;
+    color: #cccccc;
+}
