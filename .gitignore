@@ -1,5 +1,4 @@
 .env
-/docs
 /scratch
 /calendar/credentials.json
 /calendar/token.json
