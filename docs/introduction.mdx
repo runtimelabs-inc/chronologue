@@ -1,71 +1,77 @@
 ---
-title: Introduction
-description: "Welcome to the home of your new documentation"
+title: "Introduction"
+description: "Chronologue: Memory-grounded scheduling and calendar synchronization for agents and humans"
 ---
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.png"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.png"
-  alt="Hero Dark"
-/>
+# Chronologue: Memory-Driven Scheduling and Calendar API
 
-## Setting up
+## Project Overview
 
-The first step to world-class documentation is setting up your editing environments.
+Chronologue is a memory orchestration platform that bridges structured memory traces with real-world calendar systems.
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+Designed to support both human workflows and AI-driven agent scheduling, Chronologue enables conversational histories, user goals, observations, and planned actions to be serialized, validated, and integrated into standard `.ics` formats for synchronization with Google Calendar, Apple Calendar, and other platforms.
 
-## Make it yours
+The system emphasizes **local-first design**, modular validation, and flexible editing to support reliable, transparent memory-driven workflows.
 
-Update your docs to your brand and add valuable content for the best user conversion.
+## Core Components
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/content/components/accordions"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+- **Memory Trace Ingestion**  
+  Structured memory traces (`.json`) capturing tasks, reflections, goals, or events are submitted via a standardized API.
+
+- **Validation Layer**  
+  Traces are validated against a strict schema for compatibility with RFC 5545 calendar event standards.
+
+- **ICS Generation Engine**  
+  Converts memory traces to `.ics` format, including timestamps, UIDs, summaries, descriptions, and optional metadata.
+
+- **Editing and Previewing**  
+  Events can be reviewed or edited with Markdown previews before syncing.
+
+- **Calendar Synchronization Modules**  
+  - Google Calendar (via OAuth2)
+  - Apple Calendar (`.ics` export or native integration)
+
+- **Agent Compatibility**  
+  Chronologue supports memory-to-action pipelines, enabling time-aware conversational agents and planners.
+
+## Key Features
+
+- Schema-based validation with error reporting
+- UID preservation for traceability
+- ISO 8601 + 24h time support
+- Modular design for easy integration
+- Human-readable and machine-compatible output
+
+## Example Workflow
+
+1. **Capture:** Submit memory trace as JSON (e.g., meeting, observation).
+2. **Validate:** Ensure required fields and formatting.
+3. **Transform:** Convert to `.ics` with timezone and UID handling.
+4. **Preview/Edit:** Optional review in Markdown.
+5. **Sync:** Push to calendar (Google, Apple, etc.)
+
+## Design Philosophy
+
+Chronologue is built around the principle that intelligent systems must be grounded in time. Scheduling is a memory-anchored action requiring precision, auditability, and flexibility.
+
+Chronologue provides a clean, extensible interface for both humans and agents to generate and orchestrate structured calendar events.
+
+## Future Extensions
+
+- Multi-agent scheduling coordination
+- Context-aware event updates
+- Trace provenance and versioning
+- Federated memory synchronization
+
+## Getting Started
+
+Documentation and developer guides are available in the `/docs/` and `/site/` directories.
+
+To run locally:
+
+```bash
+git clone https://github.com/dr2633/chronologue.git
+cd chronologue
+pip install -r requirements.txt
+streamlit run site/grocery_scheduler/Home.py
+```
