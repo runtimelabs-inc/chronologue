@@ -1,12 +1,0 @@
-BEGIN:VCALENDARVERSION:2.0PRODID:-//CalendarMemorySystem//EN
-BEGIN:VEVENT
-UID:lab_ops-20240407@memorysystem.ai
-DTSTAMP:20250425T160531Z
-DTSTART:20240407T090000Z
-DTEND:20240407T093000Z
-SUMMARY:Incubator #3 temp rose 1.5°C above target
-DESCRIPTION:Temperature in incubator #3 drifted 1.5°C above target during morning run.
-Chat log: https://chat.openai.com/share/example-link
-LOCATION:wetlab_sync
-STATUS:CONFIRMED
-END:VEVENTEND:VCALENDAR
