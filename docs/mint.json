@@ -1,127 +1,103 @@
 {
-  "openapi": "3.0.0",
-  "info": {
-    "title": "Chronologue API",
-    "version": "1.0.0",
-    "description": "Chronologue provides a memory-grounded interface for scheduling events, validating traces, and syncing with calendar systems."
-  },
-  "paths": {
-    "/validate-trace": {
-      "post": {
-        "summary": "Validate a memory trace",
-        "description": "Validates a JSON memory trace against the Chronologue schema.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MemoryTrace"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Validation success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "valid": { "type": "boolean" },
-                    "errors": {
-                      "type": "array",
-                      "items": { "type": "string" }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Chronologue",
+    "description": "Memory-grounded scheduling and orchestration system",
+    "logo": {
+      "light": "/logo/light.svg",
+      "dark": "/logo/dark.svg",
+      "href": "https://github.com/dr2633/chronologue"
+    },
+    "favicon": "/favicon.svg",
+    "theme": "venus",
+    "colors": {
+      "primary": "#00C896",
+      "light": "#9CEBCC",
+      "dark": "#007B5F",
+      "background": {
+        "light": "#FFFFFF",
+        "dark": "#0F1117"
       }
     },
-    "/convert": {
-      "post": {
-        "summary": "Convert trace to ICS",
-        "description": "Transforms a memory trace into a valid .ics calendar event.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MemoryTrace"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Returns .ics content",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "ics": { "type": "string", "description": "Raw ICS content as string" }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    "modeToggle": {
+      "default": "dark"
     },
-    "/sync-google": {
-      "post": {
-        "summary": "Sync event to Google Calendar",
-        "description": "Takes an event trace and syncs it to a connected Google Calendar account.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MemoryTrace"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Sync success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "eventId": { "type": "string" },
-                    "status": { "type": "string" }
-                  }
-                }
-              }
-            }
-          }
-        }
+    "tabs": [
+      {
+        "name": "Guides",
+        "url": "guides"
+      },
+      {
+        "name": "API Reference",
+        "url": "api-reference"
       }
-    }
-  },
-  "components": {
-    "schemas": {
-      "MemoryTrace": {
-        "type": "object",
-        "required": ["timestamp", "content", "id"],
-        "properties": {
-          "id": { "type": "string" },
-          "timestamp": { "type": "string", "format": "date-time" },
-          "content": { "type": "string" },
-          "location": { "type": "string" },
-          "attendees": {
-            "type": "array",
-            "items": { "type": "string" }
+    ],
+    "navigation": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          "quickstart",
+          "development"
+        ]
+      },
+      {
+        "group": "Core Concepts",
+        "pages": [
+          "essentials/overview",
+          "essentials/validation",
+          "essentials/ics-format"
+        ]
+      },
+      {
+        "group": "API Reference",
+        "pages": [
+          "api-reference/introduction",
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/validate-trace",
+              "api-reference/convert",
+              "api-reference/sync-google"
+            ]
           }
-        }
+        ]
+      },
+      {
+        "group": "Snippets",
+        "pages": [
+          "snippets/validate",
+          "snippets/convert",
+          "snippets/sync"
+        ]
       }
-    }
+    ],
+    "anchors": [
+      {
+        "name": "GitHub",
+        "icon": "github",
+        "url": "https://github.com/dr2633/chronologue"
+      },
+      {
+        "name": "Email Support",
+        "icon": "mail",
+        "url": "mailto:support@chronologue.ai"
+      }
+    ],
+    "topbarCtaButton": {
+      "name": "View on GitHub",
+      "url": "https://github.com/dr2633/chronologue"
+    },
+    "api": {
+      "spec": "openapi.json"
+    },
+    "feedback": {
+      "suggestEdit": true,
+      "raiseIssue": true,
+      "thumbsRating": true
+    },
+    "search": {
+      "prompt": "Search Chronologue docs..."
+    },
+    "isWhiteLabeled": false
   }
-}
-
+  
