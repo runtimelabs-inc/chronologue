@@ -1,7 +1,6 @@
 {
     "$schema": "https://mintlify.com/schema.json",
     "name": "Chronologue",
-    "description": "Memory-grounded scheduling and orchestration system",
     "logo": {
       "light": "/logo/light.svg",
       "dark": "/logo/dark.svg",
@@ -87,9 +86,6 @@
       "name": "View on GitHub",
       "url": "https://github.com/dr2633/chronologue"
     },
-    "api": {
-      "spec": "openapi.json"
-    },
     "feedback": {
       "suggestEdit": true,
       "raiseIssue": true,
@@ -99,5 +95,4 @@
       "prompt": "Search Chronologue docs..."
     },
     "isWhiteLabeled": false
-  }
-  
+}
