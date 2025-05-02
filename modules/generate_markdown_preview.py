@@ -74,7 +74,7 @@ def generate_markdown_from_ics(ics_path: str, output_dir: str) -> None:
     output_path = output_dir_path / f"{base_name}_preview.md"
 
     output_path.write_text(markdown_content)
-    print(f"✅ Markdown preview generated: {output_path}")
+    print(f"Markdown preview generated: {output_path}")
 
 if __name__ == "__main__":
     ics_path = "/Users/derekrosenzweig/Documents/GitHub/chronologue/data/summary/raw_ics/wetlab_sample.ics"

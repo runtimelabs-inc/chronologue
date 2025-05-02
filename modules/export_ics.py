@@ -18,12 +18,85 @@ def datetime_to_ics(dt: str) -> str:
 
 
 def resolve_duration_minutes(trace: dict, default: int = 30) -> int:
+    """
+    Resolves the duration in minutes from various user input formats:
+    - Integer value in "duration_minutes" field
+    - String with time units like "2h", "30m", "1.5h", "1h30m"
+    - Time range like "2:00-3:30" or "14:00-15:30"
+    - Natural language like "one hour", "two hours and 30 minutes"
+    
+    Falls back to default if no valid duration can be determined.
+    """
     try:
-        duration = int(trace.get("duration_minutes", default))
-        if 0 < duration <= 1440:
-            return duration
+        # Check for direct integer value
+        if "duration_minutes" in trace:
+            duration_value = trace["duration_minutes"]
+            if isinstance(duration_value, int):
+                if 0 < duration_value <= 1440:
+                    return duration_value
+            elif isinstance(duration_value, str):
+                # Try parsing as integer first
+                try:
+                    duration = int(duration_value)
+                    if 0 < duration <= 1440:
+                        return duration
+                except ValueError:
+                    # Check for time units (e.g., "2h", "30m", "1.5h", "1h30m")
+                    if "h" in duration_value.lower() or "m" in duration_value.lower():
+                        total_minutes = 0
+                        parts = duration_value.lower().replace(" ", "")
+                        
+                        # Handle hours
+                        if "h" in parts:
+                            h_parts = parts.split("h")
+                            try:
+                                hours = float(h_parts[0])
+                                total_minutes += int(hours * 60)
+                                parts = h_parts[1]
+                            except (ValueError, IndexError):
+                                pass
+                        
+                        # Handle minutes
+                        if "m" in parts:
+                            m_parts = parts.split("m")
+                            try:
+                                minutes = float(m_parts[0])
+                                total_minutes += int(minutes)
+                            except (ValueError, IndexError):
+                                pass
+                        
+                        if 0 < total_minutes <= 1440:
+                            return total_minutes
+                    
+                    # Check for time range format (e.g., "2:00-3:30" or "14:00-15:30")
+                    elif "-" in duration_value:
+                        try:
+                            start_str, end_str = duration_value.split("-")
+                            
+                            # Parse start and end times
+                            def parse_time(time_str):
+                                time_str = time_str.strip()
+                                if ":" in time_str:
+                                    hours, minutes = map(int, time_str.split(":"))
+                                    return hours * 60 + minutes
+                                else:
+                                    return int(time_str) * 60
+                            
+                            start_minutes = parse_time(start_str)
+                            end_minutes = parse_time(end_str)
+                            
+                            # Handle cases where end time is on the next day
+                            duration = end_minutes - start_minutes
+                            if duration <= 0:
+                                duration += 24 * 60
+                            
+                            if 0 < duration <= 1440:
+                                return duration
+                        except (ValueError, IndexError):
+                            pass
     except Exception:
         pass
+    
     print(f"[!] Invalid duration_minutes in trace {trace.get('id')}, using default {default}")
     return default
 
