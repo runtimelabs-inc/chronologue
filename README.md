@@ -80,7 +80,7 @@ This repository converts structured memory traces (stored as `.json`) into `.ics
    uv pip install -r requirements.txt
    ```
 
-   Add core dependencies using `uv`:
+Add core dependencies using `uv`:
 
    ```bash
    uv add "mcp[cli]" httpx

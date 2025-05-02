@@ -1,0 +1,109 @@
+[
+    {
+      "input_prompt": "Add a calendar event called 'Team sync' for this Friday at 3pm.",
+      "expected_function_call": {
+        "name": "schedule_event",
+        "arguments": {
+          "title": "Team sync",
+          "start_time": "2025-05-03T15:00:00Z",
+          "duration_minutes": 30,
+          "location": "",
+          "description": ""
+        }
+      }
+    },
+    {
+      "input_prompt": "Schedule 'Dentist appointment' at 9am two weeks from today.",
+      "expected_function_call": {
+        "name": "schedule_event",
+        "arguments": {
+          "title": "Dentist appointment",
+          "start_time": "2025-05-16T09:00:00Z",
+          "duration_minutes": 60,
+          "location": "",
+          "description": ""
+        }
+      }
+    },
+    {
+      "input_prompt": "Book 'Lunch with Sarah' next Thursday at noon in Palo Alto.",
+      "expected_function_call": {
+        "name": "schedule_event",
+        "arguments": {
+          "title": "Lunch with Sarah",
+          "start_time": "2025-05-08T12:00:00Z",
+          "duration_minutes": 60,
+          "location": "Palo Alto",
+          "description": ""
+        }
+      }
+    },
+    {
+      "input_prompt": "Remind me to send the report in 90 minutes.",
+      "expected_function_call": {
+        "name": "schedule_event",
+        "arguments": {
+          "title": "Send the report",
+          "start_time": "2025-05-02T11:30:00Z",
+          "duration_minutes": 10,
+          "location": "",
+          "description": "Reminder"
+        }
+      }
+    },
+    {
+      "input_prompt": "Set a weekly recurring 'Workout' on Tuesdays and Thursdays at 7am.",
+      "expected_function_call": {
+        "name": "schedule_event",
+        "arguments": {
+          "title": "Workout",
+          "start_time": "2025-05-06T07:00:00Z",
+          "duration_minutes": 60,
+          "location": "",
+          "description": "Repeats weekly on Tuesday and Thursday"
+        }
+      }
+    },
+    {
+      "input_prompt": "Change the time of 'Lunch with Sarah' to 1pm.",
+      "expected_function_call": {
+        "name": "edit_event",
+        "arguments": {
+          "title": "Lunch with Sarah",
+          "fields_to_update": {
+            "start_time": "2025-05-08T13:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "input_prompt": "Update the location of 'Team sync' to 'Zoom'.",
+      "expected_function_call": {
+        "name": "edit_event",
+        "arguments": {
+          "title": "Team sync",
+          "fields_to_update": {
+            "location": "Zoom"
+          }
+        }
+      }
+    },
+    {
+      "input_prompt": "Cancel my 'Dentist appointment'.",
+      "expected_function_call": {
+        "name": "cancel_event",
+        "arguments": {
+          "title": "Dentist appointment"
+        }
+      }
+    },
+    {
+      "input_prompt": "Delete the workout I had scheduled on Thursday.",
+      "expected_function_call": {
+        "name": "cancel_event",
+        "arguments": {
+          "title": "Workout"
+        }
+      }
+    }
+  ]
