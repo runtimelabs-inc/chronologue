@@ -1,10 +1,10 @@
 BEGIN:VCALENDARVERSION:2.0PRODID:-//CalendarMemorySystem//EN
 BEGIN:VEVENT
 UID:lab_ops-20250407@memorysystem.ai
-DTSTAMP:20250425T160639Z
+DTSTAMP:20250505T151541Z
 DTSTART:20250407T090000Z
 DTEND:20250407T093000Z
-SUMMARY:Restock tips & ethanol for lab stations
+SUMMARY:Restock pipette tips & ethanol
 DESCRIPTION:Restock pipette tips and ethanol for wet lab stations.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -12,7 +12,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wetlab_sync-20250407@memorysystem.ai
-DTSTAMP:20250425T160640Z
+DTSTAMP:20250505T151542Z
 DTSTART:20250407T134500Z
 DTEND:20250407T141500Z
 SUMMARY:Incubator #3 temp rose 1.5°C above target
@@ -23,7 +23,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250408@memorysystem.ai
-DTSTAMP:20250425T160641Z
+DTSTAMP:20250505T151544Z
 DTSTART:20250408T180000Z
 DTEND:20250408T183000Z
 SUMMARY:Move chemical checks to Mondays.
@@ -34,10 +34,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:weekly-wetlab-20250409@memorysystem.ai
-DTSTAMP:20250425T160642Z
+DTSTAMP:20250505T151544Z
 DTSTART:20250409T150000Z
 DTEND:20250409T153000Z
-SUMMARY:Wet lab team weekly sync meeting
+SUMMARY:Wet lab team weekly sync
 DESCRIPTION:Weekly sync with wet lab team
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -45,7 +45,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_meeting-20250410@memorysystem.ai
-DTSTAMP:20250425T160643Z
+DTSTAMP:20250505T151545Z
 DTSTART:20250410T103000Z
 DTEND:20250410T110000Z
 SUMMARY:Revise onboarding packet for RAs
@@ -56,10 +56,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_meeting-20250410@memorysystem.ai
-DTSTAMP:20250425T160645Z
+DTSTAMP:20250505T151546Z
 DTSTART:20250410T174500Z
 DTEND:20250410T181500Z
-SUMMARY:Smooth training\; clarify freezer labeling.
+SUMMARY:Smooth RA training\; clarify freezer SOP.
 DESCRIPTION:Training went well with new RA but clarity needed on freezer labeling SOP.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -67,10 +67,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:allhands-labmeeting-20250411@memorysystem.ai
-DTSTAMP:20250425T160645Z
+DTSTAMP:20250505T151547Z
 DTSTART:20250411T140000Z
 DTEND:20250411T143000Z
-SUMMARY:Lab meeting: protocol review & Q&A
+SUMMARY:Lab protocol review & Q&A session
 DESCRIPTION:All-hands lab meeting: protocol review + Q&A
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -78,10 +78,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wetlab_sync-20250412@memorysystem.ai
-DTSTAMP:20250425T160647Z
+DTSTAMP:20250505T151548Z
 DTSTART:20250412T112000Z
 DTEND:20250412T115000Z
-SUMMARY:PCR station reconfig done early
+SUMMARY:PCR setup finished early
 DESCRIPTION:PCR station reconfiguration completed ahead of schedule.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -89,10 +89,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250413@memorysystem.ai
-DTSTAMP:20250425T160649Z
+DTSTAMP:20250505T151549Z
 DTSTART:20250413T084500Z
 DTEND:20250413T091500Z
-SUMMARY:Q2 consumables budget request submitted.
+SUMMARY:Q2 consumables budget request submitted
 DESCRIPTION:Submit budget request for Q2 consumables.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -100,7 +100,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250413@memorysystem.ai
-DTSTAMP:20250425T160656Z
+DTSTAMP:20250505T151550Z
 DTSTART:20250413T193000Z
 DTEND:20250413T200000Z
 SUMMARY:Calendar reminders boosted task clarity.
