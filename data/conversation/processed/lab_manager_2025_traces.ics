@@ -1,10 +1,10 @@
 BEGIN:VCALENDARVERSION:2.0PRODID:-//CalendarMemorySystem//EN
 BEGIN:VEVENT
 UID:lab_ops-20250407@memorysystem.ai
-DTSTAMP:20250505T151449Z
+DTSTAMP:20250505T165050Z
 DTSTART:20250407T090000Z
-DTEND:20250407T093000Z
-SUMMARY:Restock pipette tips and ethanol
+DTEND:20250407T091500Z
+SUMMARY:Restock pipette tips & ethanol.
 DESCRIPTION:Restock pipette tips and ethanol for wet lab stations.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -12,10 +12,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wetlab_sync-20250407@memorysystem.ai
-DTSTAMP:20250505T151450Z
+DTSTAMP:20250505T165051Z
 DTSTART:20250407T134500Z
-DTEND:20250407T141500Z
-SUMMARY:Incubator #3 temp rose 1.5°C above target.
+DTEND:20250407T140000Z
+SUMMARY:Incubator #3 temp rose 1.5°C above target
 DESCRIPTION:Temperature in incubator #3 drifted 1.5°C above target during morning run.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -23,10 +23,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250408@memorysystem.ai
-DTSTAMP:20250505T151453Z
+DTSTAMP:20250505T165051Z
 DTSTART:20250408T180000Z
-DTEND:20250408T183000Z
-SUMMARY:Move inventory checks to Mondays.
+DTEND:20250408T181500Z
+SUMMARY:Rotate chemical checks to Mondays
 DESCRIPTION:Need to rotate chemical inventory checks every Monday instead of end of week.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -34,9 +34,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:weekly-wetlab-20250409@memorysystem.ai
-DTSTAMP:20250505T151454Z
+DTSTAMP:20250505T165052Z
 DTSTART:20250409T150000Z
-DTEND:20250409T153000Z
+DTEND:20250409T151500Z
 SUMMARY:Wet lab team weekly sync meeting
 DESCRIPTION:Weekly sync with wet lab team
 Chat log: https://chat.openai.com/share/example-link
@@ -45,10 +45,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_meeting-20250410@memorysystem.ai
-DTSTAMP:20250505T151455Z
+DTSTAMP:20250505T165055Z
 DTSTART:20250410T103000Z
-DTEND:20250410T110000Z
-SUMMARY:Revise onboarding packet for RAs
+DTEND:20250410T104500Z
+SUMMARY:Revise new RA onboarding packet
 DESCRIPTION:Update onboarding packet for new RAs.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -56,10 +56,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_meeting-20250410@memorysystem.ai
-DTSTAMP:20250505T151456Z
+DTSTAMP:20250505T165058Z
 DTSTART:20250410T174500Z
-DTEND:20250410T181500Z
-SUMMARY:Good training\; need clarity on freezer SOP.
+DTEND:20250410T180000Z
+SUMMARY:Training good\; need clear freezer SOP.
 DESCRIPTION:Training went well with new RA but clarity needed on freezer labeling SOP.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -67,10 +67,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:allhands-labmeeting-20250411@memorysystem.ai
-DTSTAMP:20250505T151458Z
+DTSTAMP:20250505T165059Z
 DTSTART:20250411T140000Z
-DTEND:20250411T143000Z
-SUMMARY:Lab meeting: protocol review & Q&A
+DTEND:20250411T141500Z
+SUMMARY:Lab protocol review & Q&A meeting
 DESCRIPTION:All-hands lab meeting: protocol review + Q&A
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -78,9 +78,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:wetlab_sync-20250412@memorysystem.ai
-DTSTAMP:20250505T151459Z
+DTSTAMP:20250505T165100Z
 DTSTART:20250412T112000Z
-DTEND:20250412T115000Z
+DTEND:20250412T113500Z
 SUMMARY:PCR station reconfigured early
 DESCRIPTION:PCR station reconfiguration completed ahead of schedule.
 Chat log: https://chat.openai.com/share/example-link
@@ -89,9 +89,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250413@memorysystem.ai
-DTSTAMP:20250505T151500Z
+DTSTAMP:20250505T165101Z
 DTSTART:20250413T084500Z
-DTEND:20250413T091500Z
+DTEND:20250413T090000Z
 SUMMARY:Q2 consumables budget request submitted
 DESCRIPTION:Submit budget request for Q2 consumables.
 Chat log: https://chat.openai.com/share/example-link
@@ -100,10 +100,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250413@memorysystem.ai
-DTSTAMP:20250505T151501Z
+DTSTAMP:20250505T165102Z
 DTSTART:20250413T193000Z
-DTEND:20250413T200000Z
-SUMMARY:Calendar reminders boosted task clarity.
+DTEND:20250413T194500Z
+SUMMARY:Calendar reminders boosted task visibility.
 DESCRIPTION:Having calendar-linked reminders improved task visibility this week.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -111,9 +111,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250501@memorysystem.ai
-DTSTAMP:20250505T151502Z
+DTSTAMP:20250505T165102Z
 DTSTART:20250501T090000Z
-DTEND:20250501T093000Z
+DTEND:20250501T091500Z
 SUMMARY:Q2 kickoff: review & prioritize orders
 DESCRIPTION:Kick off Q2 by reviewing open supply orders and prioritizing urgent items.
 Chat log: https://chat.openai.com/share/example-link
@@ -122,10 +122,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:q2-kickoff-20250501@memorysystem.ai
-DTSTAMP:20250505T151503Z
+DTSTAMP:20250505T165103Z
 DTSTART:20250501T100000Z
-DTEND:20250501T103000Z
-SUMMARY:Q2 kickoff: set priorities & plan logistics
+DTEND:20250501T101500Z
+SUMMARY:Q2 kickoff: priorities & logistics
 DESCRIPTION:Q2 kickoff sync: priorities and logistics planning
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -133,10 +133,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250501@memorysystem.ai
-DTSTAMP:20250505T151504Z
+DTSTAMP:20250505T165103Z
 DTSTART:20250501T143000Z
-DTEND:20250501T150000Z
-SUMMARY:Ethanol stock low at all stations
+DTEND:20250501T144500Z
+SUMMARY:70% ethanol stock unusually low lab-wide
 DESCRIPTION:70% ethanol stock is lower than expected across all bench stations.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -144,10 +144,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250501@memorysystem.ai
-DTSTAMP:20250505T151505Z
+DTSTAMP:20250505T165104Z
 DTSTART:20250501T153000Z
-DTEND:20250501T160000Z
-SUMMARY:Check tip boxes & reorder filtered tips.
+DTEND:20250501T154500Z
+SUMMARY:Audit and reorder pipette tips
 DESCRIPTION:Audit pipette tip boxes and reorder filtered tips (10 µL and 200 µL).
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -155,10 +155,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250501@memorysystem.ai
-DTSTAMP:20250505T151507Z
+DTSTAMP:20250505T165105Z
 DTSTART:20250501T180000Z
-DTEND:20250501T183000Z
-SUMMARY:Switch to shared weekly digital logs.
+DTEND:20250501T181500Z
+SUMMARY:Switch to weekly shared digital inventory logs.
 DESCRIPTION:We should move from ad-hoc inventory notes to shared digital logs updated weekly.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -166,9 +166,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab-cleaning-20250502@memorysystem.ai
-DTSTAMP:20250505T151508Z
+DTSTAMP:20250505T165106Z
 DTSTART:20250502T110000Z
-DTEND:20250502T113000Z
+DTEND:20250502T111500Z
 SUMMARY:Lab deep cleaning: benches & equipment
 DESCRIPTION:Lab deep cleaning block (benches\, cold room\, centrifuges)
 Chat log: https://chat.openai.com/share/example-link
@@ -177,10 +177,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250502@memorysystem.ai
-DTSTAMP:20250505T151510Z
+DTSTAMP:20250505T165107Z
 DTSTART:20250502T140000Z
-DTEND:20250502T143000Z
-SUMMARY:Expired reagents found\; flagged for discard.
+DTEND:20250502T141500Z
+SUMMARY:Two expired reagents flagged for discard.
 DESCRIPTION:Cold room had two expired reagents\; flagged for discard.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -188,10 +188,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250503@memorysystem.ai
-DTSTAMP:20250505T151511Z
+DTSTAMP:20250505T165108Z
 DTSTART:20250503T100000Z
-DTEND:20250503T103000Z
-SUMMARY:Record freezer layout before adding samples.
+DTEND:20250503T101500Z
+SUMMARY:Log freezer layout before adding samples.
 DESCRIPTION:Document current freezer box layout in shared drive before adding new samples.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -199,10 +199,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250503@memorysystem.ai
-DTSTAMP:20250505T151512Z
+DTSTAMP:20250505T165109Z
 DTSTART:20250503T130000Z
-DTEND:20250503T133000Z
-SUMMARY:Inconsistent freezer labeling found
+DTEND:20250503T131500Z
+SUMMARY:Inconsistent freezer rack labeling found
 DESCRIPTION:Noticed inconsistent labeling format across freezer racks — may confuse RAs.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -210,10 +210,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250504@memorysystem.ai
-DTSTAMP:20250505T151513Z
+DTSTAMP:20250505T165109Z
 DTSTART:20250504T163000Z
-DTEND:20250504T170000Z
-SUMMARY:Biweekly cleaning shifts chosen
+DTEND:20250504T164500Z
+SUMMARY:Switch to biweekly cleaning rotations.
 DESCRIPTION:Rotating cleaning responsibilities biweekly seems more sustainable than weekly shifts.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -221,9 +221,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:equipment_maintenance-20250505@memorysystem.ai
-DTSTAMP:20250505T151514Z
+DTSTAMP:20250505T165110Z
 DTSTART:20250505T091500Z
-DTEND:20250505T094500Z
+DTEND:20250505T093000Z
 SUMMARY:Calibrate centrifuges & incubators
 DESCRIPTION:Schedule calibration checks for centrifuges and incubators.
 Chat log: https://chat.openai.com/share/example-link
@@ -232,9 +232,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:vendor-calibration-20250505@memorysystem.ai
-DTSTAMP:20250505T151515Z
+DTSTAMP:20250505T165111Z
 DTSTART:20250505T110000Z
-DTEND:20250505T113000Z
+DTEND:20250505T111500Z
 SUMMARY:Vendor calibrates autoclaves\, water bath
 DESCRIPTION:Calibration vendor visit for autoclaves and water bath
 Chat log: https://chat.openai.com/share/example-link
@@ -243,10 +243,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:equipment_maintenance-20250505@memorysystem.ai
-DTSTAMP:20250505T151516Z
+DTSTAMP:20250505T165112Z
 DTSTART:20250505T143000Z
-DTEND:20250505T150000Z
-SUMMARY:Centrifuge #2 flagged for imbalance.
+DTEND:20250505T144500Z
+SUMMARY:Centrifuge #2 flagged for imbalance at 4k rpm.
 DESCRIPTION:Centrifuge #2 showed imbalance warning at 4\,000 rpm — flagged for inspection.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -254,9 +254,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:protocol_update-20250506@memorysystem.ai
-DTSTAMP:20250505T151517Z
+DTSTAMP:20250505T165113Z
 DTSTART:20250506T100000Z
-DTEND:20250506T103000Z
+DTEND:20250506T101500Z
 SUMMARY:SOP updated: new column RNA kit
 DESCRIPTION:Update SOP for RNA extraction with new column-based kit.
 Chat log: https://chat.openai.com/share/example-link
@@ -265,10 +265,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:protocol_update-20250506@memorysystem.ai
-DTSTAMP:20250505T151518Z
+DTSTAMP:20250505T165114Z
 DTSTART:20250506T164500Z
-DTEND:20250506T171500Z
-SUMMARY:Column RNA kits cut prep time by 20 min.
+DTEND:20250506T170000Z
+SUMMARY:Column RNA kits cut hands-on time by 20m.
 DESCRIPTION:Switch to column-based RNA kits reduced hands-on time by 20 minutes.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -276,9 +276,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:protocol-walkthrough-20250507@memorysystem.ai
-DTSTAMP:20250505T151518Z
+DTSTAMP:20250505T165115Z
 DTSTART:20250507T130000Z
-DTEND:20250507T133000Z
+DTEND:20250507T131500Z
 SUMMARY:Team reviews new RNA extraction steps
 DESCRIPTION:Team walkthrough of updated RNA extraction workflow
 Chat log: https://chat.openai.com/share/example-link
@@ -287,10 +287,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:protocol_update-20250507@memorysystem.ai
-DTSTAMP:20250505T151519Z
+DTSTAMP:20250505T165116Z
 DTSTART:20250507T153000Z
-DTEND:20250507T160000Z
-SUMMARY:Minor sample loss\; elution steps need tweak.
+DTEND:20250507T154500Z
+SUMMARY:Minor sample loss\; pipetting steps need tune
 DESCRIPTION:New pipetting steps led to minor sample loss during elution\; requires adjustment.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -298,9 +298,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:equipment_maintenance-20250508@memorysystem.ai
-DTSTAMP:20250505T151520Z
+DTSTAMP:20250505T165117Z
 DTSTART:20250508T113000Z
-DTEND:20250508T120000Z
+DTEND:20250508T114500Z
 SUMMARY:Weekly calibration log review checklist
 DESCRIPTION:Generate checklist for weekly calibration log review.
 Chat log: https://chat.openai.com/share/example-link
@@ -309,10 +309,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:equipment_maintenance-20250509@memorysystem.ai
-DTSTAMP:20250505T151521Z
+DTSTAMP:20250505T165118Z
 DTSTART:20250509T101500Z
-DTEND:20250509T104500Z
-SUMMARY:Descaling sped up water bath heating.
+DTEND:20250509T103000Z
+SUMMARY:Descaling sped up water bath heating
 DESCRIPTION:Water bath heating time improved after descaling — maintenance effective.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -320,9 +320,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:protocol_update-20250510@memorysystem.ai
-DTSTAMP:20250505T151522Z
+DTSTAMP:20250505T165119Z
 DTSTART:20250510T170000Z
-DTEND:20250510T173000Z
+DTEND:20250510T171500Z
 SUMMARY:Walkthroughs sped up protocol adoption.
 DESCRIPTION:Mid-week walkthroughs improved protocol adoption faster than documentation alone.
 Chat log: https://chat.openai.com/share/example-link
@@ -331,9 +331,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra_training-20250512@memorysystem.ai
-DTSTAMP:20250505T151523Z
+DTSTAMP:20250505T165119Z
 DTSTART:20250512T090000Z
-DTEND:20250512T093000Z
+DTEND:20250512T091500Z
 SUMMARY:Prep RA training packet: safety & pipetting
 DESCRIPTION:Prepare training packet for new RAs including safety SOPs and pipetting guide.
 Chat log: https://chat.openai.com/share/example-link
@@ -342,9 +342,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra_training-20250512@memorysystem.ai
-DTSTAMP:20250505T151524Z
+DTSTAMP:20250505T165120Z
 DTSTART:20250512T100000Z
-DTEND:20250512T103000Z
+DTEND:20250512T101500Z
 SUMMARY:New RA struggled to find ethanol stations.
 DESCRIPTION:New RA had difficulty locating ethanol refill stations during bench prep.
 Chat log: https://chat.openai.com/share/example-link
@@ -353,10 +353,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra_training-20250512@memorysystem.ai
-DTSTAMP:20250505T151525Z
+DTSTAMP:20250505T165121Z
 DTSTART:20250512T110000Z
-DTEND:20250512T113000Z
-SUMMARY:RA shadowing sped up training.
+DTEND:20250512T111500Z
+SUMMARY:New RAs shadow seniors to ramp faster
 DESCRIPTION:Pairing new RAs with senior techs for shadowing accelerated ramp-up.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -364,9 +364,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra-orientation-20250512@memorysystem.ai
-DTSTAMP:20250505T151526Z
+DTSTAMP:20250505T165122Z
 DTSTART:20250512T120000Z
-DTEND:20250512T123000Z
+DTEND:20250512T121500Z
 SUMMARY:RA orientation: safety & tour
 DESCRIPTION:RA orientation: safety procedures + tour
 Chat log: https://chat.openai.com/share/example-link
@@ -375,10 +375,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:safety_review-20250512@memorysystem.ai
-DTSTAMP:20250505T151527Z
+DTSTAMP:20250505T165123Z
 DTSTART:20250512T130000Z
-DTEND:20250512T133000Z
-SUMMARY:Email revised safety plan to lab staff.
+DTEND:20250512T131500Z
+SUMMARY:Distribute new chemical hygiene plan.
 DESCRIPTION:Send updated chemical hygiene plan to all lab personnel.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -386,10 +386,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:safety_review-20250513@memorysystem.ai
-DTSTAMP:20250505T151527Z
+DTSTAMP:20250505T165124Z
 DTSTART:20250513T090000Z
-DTEND:20250513T093000Z
-SUMMARY:Lab coats missing—restock PPE closet.
+DTEND:20250513T091500Z
+SUMMARY:Lab coats missing\; restock needed.
 DESCRIPTION:Lab coats were missing from the secondary PPE closet — restocking needed.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -397,10 +397,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:safety_review-20250513@memorysystem.ai
-DTSTAMP:20250505T151528Z
+DTSTAMP:20250505T165126Z
 DTSTART:20250513T100000Z
-DTEND:20250513T103000Z
-SUMMARY:Improve safety signage near fume hood.
+DTEND:20250513T101500Z
+SUMMARY:Improve safety signs near fume hood
 DESCRIPTION:Safety signage could be improved near fume hood area for clarity.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -408,9 +408,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:safety-walkthrough-20250513@memorysystem.ai
-DTSTAMP:20250505T151529Z
+DTSTAMP:20250505T165127Z
 DTSTART:20250513T110000Z
-DTEND:20250513T113000Z
+DTEND:20250513T111500Z
 SUMMARY:RA cohort lab safety walkthrough
 DESCRIPTION:Lab safety walkthrough with RA cohort
 Chat log: https://chat.openai.com/share/example-link
@@ -419,10 +419,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra_training-20250513@memorysystem.ai
-DTSTAMP:20250505T151530Z
+DTSTAMP:20250505T165128Z
 DTSTART:20250513T120000Z
-DTEND:20250513T123000Z
-SUMMARY:Quiz to test RA emergency protocol knowledge
+DTEND:20250513T121500Z
+SUMMARY:Quiz on RA emergency protocol knowledge
 DESCRIPTION:Create quiz to assess RA understanding of emergency protocols.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -430,10 +430,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ra_training-20250513@memorysystem.ai
-DTSTAMP:20250505T151530Z
+DTSTAMP:20250505T165129Z
 DTSTART:20250513T130000Z
-DTEND:20250513T133000Z
-SUMMARY:RAs requested fire extinguisher guidance
+DTEND:20250513T131500Z
+SUMMARY:RAs sought fire extinguisher use clarity.
 DESCRIPTION:Two RAs asked for clarification on fire extinguisher usage steps.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -441,10 +441,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250521@memorysystem.ai
-DTSTAMP:20250505T151532Z
+DTSTAMP:20250505T165129Z
 DTSTART:20250521T090000Z
-DTEND:20250521T093000Z
-SUMMARY:Recurring tip delays: switch vendors Q3.
+DTEND:20250521T091500Z
+SUMMARY:Switch vendors due to delivery delays.
 DESCRIPTION:Recurring delays in tip deliveries suggest we need to switch vendors for Q3.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -452,10 +452,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:budget-sync-20250521@memorysystem.ai
-DTSTAMP:20250505T151534Z
+DTSTAMP:20250505T165132Z
 DTSTART:20250521T100000Z
-DTEND:20250521T103000Z
-SUMMARY:Q2 budget review & Q3 planning sync
+DTEND:20250521T101500Z
+SUMMARY:Q2 budget sync: POs\, funds\, Q3 plan
 DESCRIPTION:Mid-Q2 budget sync: open POs\, remaining funds\, Q3 planning
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -463,9 +463,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250521@memorysystem.ai
-DTSTAMP:20250505T151535Z
+DTSTAMP:20250505T165133Z
 DTSTART:20250521T110000Z
-DTEND:20250521T113000Z
+DTEND:20250521T111500Z
 SUMMARY:Submit Q2 budget update to finance
 DESCRIPTION:Finalize and submit budget update to finance for Q2 operations.
 Chat log: https://chat.openai.com/share/example-link
@@ -474,10 +474,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:procurement-20250521@memorysystem.ai
-DTSTAMP:20250505T151535Z
+DTSTAMP:20250505T165134Z
 DTSTART:20250521T120000Z
-DTEND:20250521T123000Z
-SUMMARY:Vendor delays from holiday supply issues.
+DTEND:20250521T121500Z
+SUMMARY:Vendor delays from holiday supply issues
 DESCRIPTION:Vendor response time increased due to national holiday supply chain issues.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -485,9 +485,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:procurement-20250521@memorysystem.ai
-DTSTAMP:20250505T151536Z
+DTSTAMP:20250505T165135Z
 DTSTART:20250521T130000Z
-DTEND:20250521T133000Z
+DTEND:20250521T131500Z
 SUMMARY:Vendor order consolidation cut delays.
 DESCRIPTION:Consolidating orders by vendor helped reduce delivery variability.
 Chat log: https://chat.openai.com/share/example-link
@@ -496,10 +496,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ordering-sync-20250522@memorysystem.ai
-DTSTAMP:20250505T151536Z
+DTSTAMP:20250505T165136Z
 DTSTART:20250522T090000Z
-DTEND:20250522T093000Z
-SUMMARY:Q3 inventory sync & vendor review
+DTEND:20250522T091500Z
+SUMMARY:Q3 inventory projections & vendor review
 DESCRIPTION:Inventory ordering sync: Q3 projections and vendor review
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -507,10 +507,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:lab_ops-20250522@memorysystem.ai
-DTSTAMP:20250505T151537Z
+DTSTAMP:20250505T165136Z
 DTSTART:20250522T100000Z
-DTEND:20250522T103000Z
-SUMMARY:Project enzyme/plastic usage thru Q2
+DTEND:20250522T101500Z
+SUMMARY:Project Q2 enzyme/plastic usage.
 DESCRIPTION:Compile projected usage for enzymes and plastics through end of Q2.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -518,10 +518,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250522@memorysystem.ai
-DTSTAMP:20250505T151538Z
+DTSTAMP:20250505T165137Z
 DTSTART:20250522T110000Z
-DTEND:20250522T113000Z
-SUMMARY:Unexpected spike in ligase buffer use
+DTEND:20250522T111500Z
+SUMMARY:Ligase buffer usage unusually high
 DESCRIPTION:Freezer inventory report showed unexpectedly high use of ligase buffer.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -529,10 +529,10 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:inventory_check-20250522@memorysystem.ai
-DTSTAMP:20250505T151539Z
+DTSTAMP:20250505T165138Z
 DTSTART:20250522T120000Z
-DTEND:20250522T123000Z
-SUMMARY:Need real-time updates for freezer logs.
+DTEND:20250522T121500Z
+SUMMARY:Real-time freezer logs prevent rush
 DESCRIPTION:Freezer box logging needs real-time updates to avoid end-of-quarter scrambling.
 Chat log: https://chat.openai.com/share/example-link
 LOCATION:
@@ -540,9 +540,9 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:enzyme-orders-20250522@memorysystem.ai
-DTSTAMP:20250505T151540Z
+DTSTAMP:20250505T165139Z
 DTSTART:20250522T130000Z
-DTEND:20250522T133000Z
+DTEND:20250522T131500Z
 SUMMARY:Flag enzyme order subs & review with procurement
 DESCRIPTION:Review enzyme order status and flag substitutions with procurement team
 Chat log: https://chat.openai.com/share/example-link
