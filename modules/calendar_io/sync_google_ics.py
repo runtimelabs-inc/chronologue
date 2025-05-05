@@ -29,15 +29,34 @@ def authenticate_google():
     return build("calendar", "v3", credentials=creds)
 
 def event_to_trace(event):
+    start_raw = event["start"]["dateTime"]
+    end_raw = event["end"]["dateTime"]
+
+    try:
+        start_dt = datetime.fromisoformat(start_raw.replace("Z", "+00:00"))
+        end_dt = datetime.fromisoformat(end_raw.replace("Z", "+00:00"))
+        duration = int((end_dt - start_dt).total_seconds() // 60)
+    except Exception as e:
+        print(f"[!] Failed to parse datetime: {e}")
+        return {}
+
+    # Fallbacks
+    content = event.get("description") or event.get("summary") or "No content"
+    task_id = event.get("id") or f"auto_{start_dt.strftime('%Y%m%dT%H%M')}"
+
     trace = {
         "type": "calendar_event",
-        "timestamp": event["start"]["dateTime"],
-        "end": event["end"]["dateTime"],
+        "timestamp": start_raw,
+        "end": end_raw,
         "title": event.get("summary", "Untitled Event"),
-        "content": event.get("description", ""),
+        "content": content,
+        "task_id": task_id,
         "id": event.get("id"),
-        "location": event.get("location", "")
+        "location": event.get("location", ""),
+        "duration_minutes": duration
     }
+
+    return trace
 
     try:
         start = datetime.fromisoformat(trace["timestamp"].replace("Z", "+00:00"))
