@@ -1,5 +1,7 @@
 # modules/streamlit_chat_editor.py
 
+# streamlit run modules/streamlit/streamlit_chat_editor.py
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
