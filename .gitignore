@@ -8,6 +8,9 @@ test_output.ics
 /modules/archive
 /additional-docs
 
+/.pytest_cache
+/.github
+/api
 
 
 /data/*
