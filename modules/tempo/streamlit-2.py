@@ -1,5 +1,4 @@
-# streamlit run modules/tempo/streamlit-command.py
-# Derek Rosenzweig, 2025-05-06
+# streamlit run modules/tempo/streamlit-2.py
 
 import streamlit as st
 import pandas as pd
@@ -13,28 +12,28 @@ import json
 st.set_page_config(page_title="Chronologue Scheduler", layout="wide")
 client = OpenAI()
 
-# --- UID Generation ---
+# --- UID Generator ---
 def generate_uid(title: str, date: str) -> str:
     base = re.sub(r'\W+', '_', title.lower())
     return f"{base}-{date}-{datetime.utcnow().strftime('%H%M%S')}"
 
-# --- Date Correction (for hallucinated model outputs) ---
+# --- Weekday Correction (fallback for bad date) ---
 def correct_to_nearest_weekday(weekday_str: str) -> str:
     today = datetime.now().date()
-    days = {"Monday": 0, "Tuesday": 1, "Wednesday": 2, "Thursday": 3,
-            "Friday": 4, "Saturday": 5, "Sunday": 6}
-    target = days.get(weekday_str, today.weekday())
+    weekday_map = {"Monday": 0, "Tuesday": 1, "Wednesday": 2, "Thursday": 3,
+                   "Friday": 4, "Saturday": 5, "Sunday": 6}
+    target = weekday_map.get(weekday_str, today.weekday())
     delta = (target - today.weekday()) % 7
     return (today + timedelta(days=delta)).isoformat()
 
-# --- Time Parsing ---
+# --- Time Parser ---
 def parse_time_string(time_str):
     try:
         return datetime.strptime(time_str.strip(), "%I:%M %p")
     except ValueError:
         return datetime.strptime(time_str.strip(), "%H:%M")
 
-# --- ICS Importer ---
+# --- ICS Parser ---
 def import_ics_to_dataframe(ics_text):
     events = []
     for block in ics_text.split("BEGIN:VEVENT")[1:]:
@@ -63,7 +62,7 @@ def import_ics_to_dataframe(ics_text):
         events.append(trace)
     return pd.DataFrame(events)
 
-# --- Command Function Schema ---
+# --- Tool Definition ---
 calendar_tool = {
     "type": "function",
     "function": {
@@ -92,14 +91,15 @@ calendar_tool = {
     }
 }
 
-# --- Apply Command to DataFrame ---
+# --- Apply Command ---
 def apply_command(df, command):
     action = command["action"]
     event = command["event"]
 
-    print(f"\n[DEBUG] Action: {action}")
+    print(f"[DEBUG] Action: {action}")
     print(f"[DEBUG] Event: {json.dumps(event, indent=2)}")
 
+    # Auto-correct invalid old dates
     if "2023" in event["date"]:
         parsed_day = datetime.strptime(event["date"], "%Y-%m-%d").strftime("%A")
         event["date"] = correct_to_nearest_weekday(parsed_day)
@@ -122,24 +122,21 @@ def apply_command(df, command):
 
     elif action == "edit":
         uid = event.get("uid")
-        if uid and "UID" in df.columns:
-            mask = df["UID"] == uid
-        else:
-            mask = df["Event Title"].str.lower() == event["title"].lower()
+        mask = df["UID"] == uid if uid else df["Event Title"].str.lower() == event["title"].lower()
 
         if not mask.any():
             print("[WARN] No matching event found.")
             return df
 
+        start_dt = parse_time_string(event["start_time"])
         df.loc[mask, "Date"] = event["date"]
         df.loc[mask, "Day"] = datetime.strptime(event["date"], "%Y-%m-%d").strftime("%A")
-        df.loc[mask, "Start Time"] = parse_time_string(event["start_time"]).strftime("%I:%M %p").lstrip("0")
-        df.loc[mask, "Start Time 24H"] = parse_time_string(event["start_time"]).strftime("%H:%M")
-        df.loc[mask, "End Time"] = (parse_time_string(event["start_time"]) + timedelta(minutes=event["duration_minutes"])).strftime("%I:%M %p")
+        df.loc[mask, "Start Time"] = start_dt.strftime("%I:%M %p").lstrip("0")
+        df.loc[mask, "Start Time 24H"] = start_dt.strftime("%H:%M")
+        df.loc[mask, "End Time"] = (start_dt + timedelta(minutes=event["duration_minutes"])).strftime("%I:%M %p")
         df.loc[mask, "Duration (min)"] = event["duration_minutes"]
         df.loc[mask, "Location"] = event.get("location", "")
         df.loc[mask, "Notes"] = event.get("notes", "")
-
         return df
 
     elif action == "delete":
@@ -147,47 +144,36 @@ def apply_command(df, command):
 
     return df
 
-# --- Load Default Calendar ---
+# --- Load Calendar ---
 if "calendar_df" not in st.session_state:
     try:
-        with open('modules/tempo/example_schedule.ics', 'r') as default_file:
-            default_ics_text = default_file.read()
-            st.session_state['calendar_df'] = import_ics_to_dataframe(default_ics_text)
+        with open('modules/tempo/example_schedule.ics', 'r') as f:
+            st.session_state['calendar_df'] = import_ics_to_dataframe(f.read())
     except FileNotFoundError:
         st.session_state['calendar_df'] = pd.DataFrame()
         st.error("Default calendar file not found.")
 
-# --- UI Layout ---
-st.title("Chronologue Tempo Token Scheduler")
+# --- UI ---
+st.title("Chronologue Tempo Scheduler")
 
-uploaded_file = st.file_uploader("Upload your Calendar (.ics)", type=["ics"])
+uploaded_file = st.file_uploader("Upload a calendar (.ics)", type=["ics"])
 if uploaded_file:
-    ics_text = uploaded_file.getvalue().decode()
-    st.session_state['calendar_df'] = import_ics_to_dataframe(ics_text)
+    st.session_state['calendar_df'] = import_ics_to_dataframe(uploaded_file.getvalue().decode())
 
 df = st.session_state['calendar_df']
+last_uid = df["UID"].iloc[-1] if not df.empty and "UID" in df.columns else None
 
-if not df.empty and "UID" in df.columns:
-    last_uid = df["UID"].iloc[-1]
-    st.markdown(f"**Last Event UID Reference:** `{last_uid}`")
-else:
-    last_uid = None
-
-st.subheader("Command Your Calendar")
-user_command = st.text_input("Describe an action", "Change Haircut Appointment to Wednesday at 6 PM")
+st.subheader("Command Input")
+example = "Add a yoga class on Friday at 9 AM for 60 minutes."
+user_command = st.text_input("Enter a calendar command:", example)
 
 if st.button("Update Calendar"):
     try:
         messages = [
-            {
-                "role": "system",
-                "content": (
-                    "You are modifying a structured calendar. "
-                    f"The most recent event UID is: {last_uid}. "
-                    "Always return an action and include event fields in structured format. "
-                    "If editing an event, identify by UID if possible, otherwise by title."
-                )
-            },
+            {"role": "system", "content": (
+                f"You are editing a structured calendar. Most recent UID is: {last_uid}. "
+                "Output an action with an event object containing all necessary fields."
+            )},
             {"role": "user", "content": user_command}
         ]
         result = client.chat.completions.create(
@@ -196,24 +182,18 @@ if st.button("Update Calendar"):
             tools=[calendar_tool],
             tool_choice="auto"
         )
-
-        tool_calls = result.choices[0].message.tool_calls
-        if not tool_calls or not tool_calls[0].function.arguments:
-            raise ValueError("No valid tool call received from model.")
-
-        parsed = json.loads(tool_calls[0].function.arguments)
+        parsed = json.loads(result.choices[0].message.tool_calls[0].function.arguments)
         df = apply_command(df.copy(), parsed)
         st.session_state['calendar_df'] = df
-        st.success(f"✅ Calendar updated using '{parsed['action']}' command.")
-
+        st.success(f"✅ Updated calendar with '{parsed['action']}' command.")
     except Exception as e:
-        st.error(f"⚠️ Failed to update calendar: {e}")
+        st.error(f"⚠️ Error: {e}")
         print(f"[ERROR] {e}")
 
-# --- Display Calendar Table ---
+# --- Display Updated Schedule ---
 if not df.empty:
     display_cols = ["Date", "Day", "Start Time", "End Time", "Duration (min)", "Event Title", "Location", "Notes", "UID"]
     st.dataframe(df[display_cols], use_container_width=True)
+    now = datetime.now(ZoneInfo("America/Los_Angeles"))
+    st.caption(f"📍 Current Time (PT): {now.strftime('%A, %B %d %Y – %I:%M %p')}")
 
-    now_pt = datetime.now(ZoneInfo("America/Los_Angeles"))
-    st.markdown(f"**Current Time (Pacific):** {now_pt.strftime('%A, %B %d %Y – %I:%M %p')} PT")

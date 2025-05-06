@@ -146,7 +146,7 @@ if not df.empty:
             grounded_prompt = build_prompt(df, user_query)
             with st.spinner("Thinking..."):
                 res = client.chat.completions.create(
-                    model="gpt-4-turbo",
+                    model="gpt-4.1",
                     messages=[
                         {"role": "system", "content": grounded_prompt},
                         {"role": "user", "content": user_query}
