@@ -168,7 +168,7 @@ except FileNotFoundError:
     st.error('Default calendar file not found.')
 
 # --- UI ---
-st.title("Chronologue Tempo Token Scheduler")
+st.title("Chronologue Scheduler")
 
 uploaded_file = st.file_uploader("Upload your Calendar (.ics)", type=["ics"])
 if uploaded_file:
@@ -193,7 +193,7 @@ if not df.empty:
         "Edit Event": "Move my Thursday client call to 4 PM.",
         "Remove Event": "Cancel the lab meeting scheduled for Wednesday.",
         "Conflict Check": "Can I add a meeting at 3 PM on Thursday?",
-        "Availability": "What’s my next free hour this afternoon?"
+        "Availability": "What's my next free hour this afternoon?"
     }
     selected_prompt = st.selectbox("Choose a test case", list(prompt_options.keys()))
     default_query = prompt_options[selected_prompt]
@@ -201,36 +201,47 @@ if not df.empty:
 
     if st.button("Run Prompt"):
         try:
+            # Step 1: Generate the prompt with tempo tokens
             grounded_prompt = build_prompt(df, user_query)
+            
             with st.spinner("Thinking..."):
+                # Step 2: Get the model's response
                 res = client.chat.completions.create(
-                    model="gpt-4-1106-preview",
+                    model="gpt-4.1",
                     messages=[
                         {"role": "system", "content": grounded_prompt},
                         {"role": "user", "content": user_query}
-                    ],
-                    tools=[calendar_tool],
-                    tool_choice="auto"
+                    ]
                 )
+                response_content = res.choices[0].message.content.strip()
+                st.success("Response:")
+                st.markdown(response_content)
 
-                message = res.choices[0].message
-                tool_calls = message.tool_calls
+                # Debug: Print the response content
+                print("Model Response:", response_content)
 
-                if message.content:
-                    st.markdown("### 🧠 Model Interpretation")
-                    st.markdown(message.content.strip())
+                # Step 3: Check for empty or invalid response
+                if not response_content:
+                    st.error("Received an empty response from the model.")
+                    return
 
-                if tool_calls and tool_calls[0].function.arguments:
-                    parsed = json.loads(tool_calls[0].function.arguments)
-                    df = apply_command(df.copy(), parsed)
+                # Step 4: Parse the response
+                try:
+                    parsed_changes = json.loads(response_content)  # Adjust parsing as needed
+                except json.JSONDecodeError as e:
+                    st.error(f"Failed to parse response: {e}")
+                    return
 
-                    # Sort chronologically by date and time
-                    df["Sort Key"] = df["Date"] + " " + df["Start Time 24H"]
-                    df = df.sort_values("Sort Key").drop(columns=["Sort Key"]).reset_index(drop=True)
+                # Step 5: Apply the command
+                updated_df = apply_command(df.copy(), parsed_changes)
 
-                    st.session_state['calendar_df'] = df
-                    st.success(f"✅ Calendar updated using action: `{parsed['action']}`")
+                # Step 6: User confirmation
+                if st.button("Confirm Changes"):
+                    st.session_state['calendar_df'] = updated_df
+                    st.success("Changes applied successfully.")
+                    # Re-render the updated DataFrame
+                    st.dataframe(updated_df[display_cols], use_container_width=True)
                 else:
-                    st.info("No structured update requested by the model.")
+                    st.info("Review the response and confirm to apply changes.")
         except Exception as e:
-            st.error(f"⚠️ Failed to process prompt: {e}")
+            st.error(f"Failed to process prompt: {e}")
