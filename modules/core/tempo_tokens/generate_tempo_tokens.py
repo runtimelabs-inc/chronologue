@@ -60,6 +60,8 @@ def event_to_context_sentence(event):
     title = event.name or "Untitled Event"
     desc = (event.description or "").strip()
     return f"At {start}, the user has an event titled '{title}'. {desc}"
+# Include duration of event 
+
 
 # === System Prompt Builder === #
 def generate_system_prompt_from_ics(ics_path: Path) -> str:
@@ -92,3 +94,6 @@ if __name__ == "__main__":
         print(f"✅ Prompt written to {args.output}")
     else:
         print(prompt)
+
+# Run tests with script from 
+# /Users/derekrosenzweig/Documents/GitHub/chronologue/data/calendar/raw/summary_example.ics
