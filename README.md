@@ -27,11 +27,15 @@
 
 ## Overview
 
-Chronologue transforms memory—such as conversation history—into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
+Chronologue transforms memory — such as conversation history — into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
 
 <img src="figures/calendar-example.png" width="600">
 
->*Agency emerges from the capacity to predict the future, plan, and take actions to realize them — alternatively, we can alter the environment in order to select from a new distribution. To preserve agency, we should focus on designing interfaces that allow human users to steer agentic behavior.”*  
+>*Agency emerges from the capacity to predict the future, plan, and take actions to realize them — alternatively, we can alter the environment in order to select from a new distribution. 
+
+>**To preserve agency, we should focus on designing interfaces that allow human users to steer agentic behavior.”** 
+
+--- 
 
 > *“Memory of user context conditions the future distribution of responses that a language model will sample from.”*
 >
