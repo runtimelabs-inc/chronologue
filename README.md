@@ -125,10 +125,7 @@ END:VEVENT
 
 For demos, collaboration, or integration questions:  
 **Derek Rosenzweig**  
-
 derek.rosenzweig1@gmail.com  
-
-[github.com/dr2633](https://github.com/dr2633)
 
 ## License
 
