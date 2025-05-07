@@ -5,6 +5,9 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![MCP Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-Integration-purple)](https://github.com/modelcontextprotocol)
 
+**Documentation** → [chronologue.ai](https://chronologue.ai)
+
+
 ## Overview
 
 Chronologue transforms memory—such as conversation history—into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
@@ -130,7 +133,7 @@ Chronologue is designed not just to integrate with existing calendar APIs, but t
 
 Below is a preview of the Cursor Calendar —a programmable interface where agents and users store, retrieve, and coordinate activities embedded in time.
 
-![Cursor Calendar Prototype](figures/cursor-cal.png)
+![Cursor Calendar Prototype](figures/cursor-cal.jpg)
 
 *Figure: Chat-integrated timeline interface. Events are generated, retrieved, and updated based on memory traces and natural language.*
 
