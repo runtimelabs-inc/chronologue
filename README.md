@@ -9,6 +9,9 @@
 
 Chronologue transforms memory—such as conversation history—into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
 
+<img src="figures/calendar-example.png" width="400">
+<img src="figures/calendar-cal.jpg" width="400">
+
 > *“We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.”*  
 > — [Donald Norman](https://jnd.org/)
 >
@@ -30,7 +33,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### Clone and Setup 
 
 ```bash
-git clone https://github.com/dr2633/Chronologue.git
+git clone https://github.com/dr2633/chronologue
 cd chronologue
 uv init
 uv venv
