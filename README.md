@@ -3,13 +3,11 @@
 [![Google Calendar API](https://img.shields.io/badge/Google%20Calendar-API%20Integration-green)](https://developers.google.com/calendar)
 [![iCalendar](https://img.shields.io/badge/iCalendar-Compatible-blue)](https://datatracker.ietf.org/doc/html/rfc5545)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![MCP Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-Supported-purple)](https://github.com/modelcontextprotocol)
+[![MCP Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-Integration-purple)](https://github.com/modelcontextprotocol)
 
 ## Overview
 
 Chronologue transforms memory—such as conversation history—into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
-
-Chronologue connects language models to calendar APIs, enabling agents to generate, update, and retrieve events from natural language prompts. This bidirectional loop grounds agent reasoning in time, allowing both users and models to plan, recall, and adapt with transparency and continuity
 
 > *“We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.”*  
 > — [Donald Norman](https://jnd.org/)
@@ -127,8 +125,11 @@ END:VEVENT
 
 For demos, collaboration, or integration questions:  
 **Derek Rosenzweig**  
+
 derek.rosenzweig1@gmail.com  
+
 [github.com/dr2633](https://github.com/dr2633)
+
 ## License
 
 Chronologue is open-source under the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
