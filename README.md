@@ -123,10 +123,16 @@ TRANSP:OPAQUE
 END:VEVENT
 ```
 
-#### Prototype: Cursor Calendar | Calendar Copilot
 
-<img src="figures/cursor-cal.jpg" width="600">
+## Prototype: Cursor Calendar 
 
+Chronologue is designed not just to integrate with existing calendar APIs, but to power new interfaces for agent collaboration and memory-grounded interaction. 
+
+Below is a preview of the Cursor Calendar —a programmable interface where agents and users store, retrieve, and coordinate activities embedded in time.
+
+![Cursor Calendar Prototype](figures/cursor-cal.png)
+
+*Figure: Chat-integrated timeline interface. Events are generated, retrieved, and updated based on memory traces and natural language.*
 
 
 ## Contact 
