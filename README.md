@@ -31,7 +31,7 @@ Chronologue transforms memory — such as conversation history — into calendar
 
 <img src="figures/calendar-example.png" width="600">
 
->*Agency emerges from the capacity to predict the future, plan, and take actions to realize them — alternatively, we can alter the environment in order to select from a new distribution. 
+>*Agency emerges from the capacity to predict the future, plan, and take actions to realize them — alternatively, we can alter the environment in order to select from a new distribution.*
 
 >**To preserve agency, we should focus on designing interfaces that allow human users to steer agentic behavior.”** 
 
