@@ -7,6 +7,23 @@
 
 **Documentation** → [chronologue.ai](https://chronologue.ai)
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Clone and Setup](#clone-and-setup)
+- [Install Dependencies](#install-dependencies)
+- [Set Up Environment](#set-up-environment)
+- [Core Commands](#core-commands)
+  - [JSON ↔ ICS Conversion](#json--ics-conversion)
+  - [MCP Server](#mcp-server)
+  - [Streamlit Interface](#streamlit-interface)
+- [Sample Workflow](#sample-workflow)
+- [Prototype: Cursor Calendar Copilot](#prototype-cursor-calendar-copilot)
+- [Documentation](#-documentation)
+- [License](#license)
+- [Contact](#contact)
+
 
 ## Overview
 
@@ -71,7 +88,7 @@ Follow the [Google Calendar API setup guide](calendar/google_API_setup.md) to en
 
 ## Core Scripts 
 
-### JSON ↔ ICS Conversion
+#### JSON ↔ ICS Conversion
 
 ```bash
 python modules/export_calendar.py        # JSON → ICS
@@ -94,7 +111,7 @@ streamlit run modules/streamlit_chat_editor.py
 ```
 
 
-### Sample Workflow 
+#### Sample Workflow 
 
 Model Output → `.ics` Calendar Format
 
