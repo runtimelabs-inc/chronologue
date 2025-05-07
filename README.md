@@ -31,13 +31,18 @@ Chronologue transforms memory—such as conversation history—into calendar-gro
 
 <img src="figures/calendar-example.png" width="600">
 
+#### Chronologue Design Principle
+
 > *“Memory of user context conditions the future distribution of responses that a language model will sample from.”*
 >
 > *“We make ourselves intelligent by designing environments that make relevant information accessible to our future selves.”*  
 > — [Donald Norman](https://jnd.org/)
 >
 > *“Time is a core substrate for intelligent behavior.”*
+> 
+> > *Agency emerges from the capacity to predict the future, form plans, and take actions to realize them—or to alter the environment in order to select from a new distribution. To preserve agency, we must design interfaces that allow human users to steer agentic behavior.”*  
 
+---
 
 ## Getting Started 
 
