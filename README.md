@@ -10,12 +10,11 @@
 Chronologue transforms memory—such as conversation history—into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
 
 <img src="figures/calendar-example.png" width="600">
-<img src="figures/cursor-cal.jpg" width="600">
 
-> *“We make ourselves intelligent by designing environments that contain relevant information and make it accessible to our future selves.”*  
-> — [Donald Norman](https://jnd.org/)
+> *“Memory of user context conditions the future distribution of responses that a language model will sample from.”*
 >
-> *“Memory systems grounded in user context condition the future distribution of responses that a language model will sample from.”*
+> *“We make ourselves intelligent by designing environments that make relevant information accessible to our future selves.”*  
+> — [Donald Norman](https://jnd.org/)
 >
 > *“Time is a core substrate for intelligent behavior.”*
 
@@ -123,6 +122,12 @@ STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
 ```
+
+#### Prototype: Cursor Calendar | Calendar Copilot
+
+<img src="figures/cursor-cal.jpg" width="600">
+
+
 
 ## Contact 
 
