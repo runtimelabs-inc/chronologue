@@ -3,13 +3,13 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-from ics import Calendar
+from ics import Calendar, Event
 from openai import OpenAI
 import json
 from zoneinfo import ZoneInfo
 from dateutil.parser import parse
 
-st.set_page_config(page_title="Chronologue Scheduler", layout="wide")
+st.set_page_config(page_title="Chronologue: Conversational Calendar", layout="wide")
 client = OpenAI()
 
 # --- Tempo Token Generator ---
@@ -104,25 +104,6 @@ def convert_full_memory_trace_to_dataframe(memory_entries):
 
     return pd.DataFrame(rows)
 
-
-def format_memory_to_markdown(memory_entries):
-    markdown_lines = []
-    for entry in memory_entries:
-        markdown_lines.append(f"### {entry['type'].capitalize()}")
-        markdown_lines.append(f"- **ID**: {entry['id']}")
-        markdown_lines.append(f"- **Timestamp**: {entry['timestamp']}")
-        markdown_lines.append(f"- **Content**: {entry['content']}")
-        if 'task_id' in entry:
-            markdown_lines.append(f"- **Task ID**: {entry['task_id']}")
-        if 'importance' in entry:
-            markdown_lines.append(f"- **Importance**: {entry['importance']}")
-        if 'completion_status' in entry:
-            markdown_lines.append(f"- **Completion Status**: {entry['completion_status']}")
-        if 'collaborators' in entry:
-            markdown_lines.append(f"- **Collaborators**: {', '.join(entry['collaborators'])}")
-        markdown_lines.append("")
-    return "\n".join(markdown_lines)
-
 # --- Prompt Constructor ---
 def build_prompt(df, user_query):
     now_utc = datetime.utcnow()
@@ -135,6 +116,32 @@ def build_prompt(df, user_query):
     prompt += f"\nUser prompt: {user_query}\n"
     return prompt
 
+# --- ICS Exporter ---
+def create_ics_file(events_df):
+    if 'Start Time 24H' not in events_df.columns or 'End Time' not in events_df.columns:
+        st.error("Missing required time columns for .ics export.")
+        return
+
+    calendar = Calendar()
+    for _, row in events_df.iterrows():
+        event = Event()
+        event.name = row['Event Title']
+        start_dt = datetime.fromisoformat(f"{row['Date']}T{row['Start Time 24H']}")
+        end_dt = start_dt + pd.to_timedelta(row["Duration (min)"], unit="m")
+        event.begin = start_dt.isoformat()
+        event.end = end_dt.isoformat()
+        event.description = row.get('Notes', '')
+        event.location = row.get('Location', '')
+        calendar.events.add(event)
+
+    ics_content = str(calendar)
+    st.download_button(
+        label="Download ICS File",
+        data=ics_content,
+        file_name="schedule.ics",
+        mime="text/calendar"
+    )
+
 # --- Load Default File (.ics or .json) ---
 default_df = pd.DataFrame()
 try:
@@ -144,7 +151,7 @@ except FileNotFoundError:
     try:
         with open('modules/streamlit/data/example_schedule.json', 'r') as f_json:
             memory = load_memory_trace(f_json.read())
-            default_df = convert_memory_trace_to_dataframe(memory)
+            default_df = convert_full_memory_trace_to_dataframe(memory)
     except FileNotFoundError:
         st.warning("No default file found in data/")
 
@@ -162,9 +169,6 @@ if uploaded_file:
     elif file_type == "json":
         memory_entries = load_memory_trace(text)
         df = convert_full_memory_trace_to_dataframe(memory_entries)
-
-        # st.markdown("## Memory Trace")
-        # st.markdown(format_memory_to_markdown(memory_entries))
     else:
         st.error("Unsupported file format.")
         df = pd.DataFrame()
@@ -212,4 +216,8 @@ if not df.empty:
                 st.markdown(res.choices[0].message.content.strip())
         except Exception as e:
             st.error(f"Failed to process prompt: {e}")
+
+    st.markdown("### Export to Calendar")
+    create_ics_file(df)
+
 
