@@ -5,10 +5,10 @@ import pandas as pd
 from datetime import datetime
 from ics import Calendar
 from openai import OpenAI
-import re
+import json
 from zoneinfo import ZoneInfo
 
-st.set_page_config(page_title="Chronologue Scheduler", layout="wide")
+st.set_page_config(page_title="Chronologue Tempo Token Scheduler", layout="wide")
 client = OpenAI()
 
 # --- Tempo Token Generator ---
@@ -31,7 +31,7 @@ def generate_tempo_tokens(row):
     tokens.append(f"<tempo:duration-{duration}min>")
     if 'meeting' in row['Event Title'].lower():
         tokens.append("<tempo:meeting>")
-    if 'urgent' in row['Notes'].lower():
+    if 'urgent' in row.get('Notes', '').lower():
         tokens.append("<tempo:urgent>")
 
     return tokens
@@ -70,6 +70,26 @@ def import_ics_to_dataframe(ics_text):
     df = pd.DataFrame(events)
     return df.drop(columns=['UID']) if 'UID' in df.columns else df
 
+# --- JSON Parser ---
+def import_json_to_dataframe(json_text):
+    raw = json.loads(json_text)
+    events = []
+    for item in raw:
+        start_dt = datetime.fromisoformat(item["timestamp"].replace("Z", "+00:00"))
+        events.append({
+            "Date": start_dt.date().isoformat(),
+            "Day": start_dt.strftime("%A"),
+            "Start Time": start_dt.strftime("%I:%M %p").lstrip("0"),
+            "Start Time 24H": start_dt.strftime("%H:%M"),
+            "Start ISO": start_dt.isoformat(),
+            "End Time": (start_dt + pd.to_timedelta(item["duration_minutes"], unit='m')).strftime("%I:%M %p").lstrip("0"),
+            "Duration (min)": item["duration_minutes"],
+            "Event Title": item["title"],
+            "Notes": item.get("content", ""),
+            "Location": item.get("location", "")
+        })
+    return pd.DataFrame(events)
+
 # --- Prompt Constructor ---
 def build_prompt(df, user_query):
     now_utc = datetime.utcnow()
@@ -82,46 +102,51 @@ def build_prompt(df, user_query):
     prompt += f"\nUser prompt: {user_query}\n"
     return prompt
 
-# Load the default example_schedule.ics file
+# --- Load Default File (ICS or JSON) ---
+default_df = pd.DataFrame()
 try:
-    with open('modules/tempo/example_schedule.ics', 'r') as default_file:
-        default_ics_text = default_file.read()
-        default_df = import_ics_to_dataframe(default_ics_text)
-        st.session_state['calendar_df'] = default_df
+    with open('modules/streamlit/data/example_schedule.ics', 'r') as f_ics:
+        default_df = import_ics_to_dataframe(f_ics.read())
 except FileNotFoundError:
-    st.error('Default calendar file not found.')
+    try:
+        with open('modules/streamlit/data/example_schedule.json', 'r') as f_json:
+            default_df = import_json_to_dataframe(f_json.read())
+    except FileNotFoundError:
+        st.warning("No default file found in data/")
 
-# Streamlit UI
+st.session_state['calendar_df'] = default_df
+
+# --- UI ---
 st.title("Chronologue Tempo Token Scheduler")
 
 uploaded_file = st.file_uploader(
-    "Upload your Calendar (.ics)",
-    type=["ics"],
-    help="A default example schedule is loaded below, but you can upload your own .ics file to use your personal calendar."
+    "Upload your Calendar (.ics or .json)",
+    type=["ics", "json"],
+    help="Upload your .ics calendar or .json memory trace."
 )
 
 if uploaded_file:
-    ics_text = uploaded_file.getvalue().decode()
-    df = import_ics_to_dataframe(ics_text)
+    file_type = uploaded_file.name.split('.')[-1]
+    text = uploaded_file.getvalue().decode()
+    if file_type == "ics":
+        df = import_ics_to_dataframe(text)
+    elif file_type == "json":
+        df = import_json_to_dataframe(text)
+    else:
+        st.error("Unsupported file format.")
+        df = pd.DataFrame()
     st.session_state['calendar_df'] = df
 else:
     df = st.session_state.get('calendar_df', pd.DataFrame())
 
 if not df.empty:
     desired_order = [
-        "Date",
-        "Day",
-        "Start Time",
-        "End Time",
-        "Duration (min)",
-        "Event Title",
-        "Location",
-        "Notes"
+        "Date", "Day", "Start Time", "End Time", "Duration (min)",
+        "Event Title", "Location", "Notes"
     ]
-    ordered_cols = [col for col in desired_order if col in df.columns]
-    df_display = df[ordered_cols]
-
-    st.dataframe(df_display, use_container_width=True)
+    display_cols = [col for col in desired_order if col in df.columns]
+    st.markdown("### Schedule Table")
+    st.dataframe(df[display_cols], use_container_width=True)
 
     now_pt = datetime.now(ZoneInfo("America/Los_Angeles"))
     st.markdown(f"**Current Time (Pacific):** {now_pt.strftime('%A, %B %d %Y – %I:%M %p')} PT")
@@ -137,9 +162,7 @@ if not df.empty:
         "Availability": "What’s my next free hour this afternoon?"
     }
     selected_prompt = st.selectbox("Choose a test case", list(prompt_options.keys()))
-
-    default_query = prompt_options[selected_prompt]
-    user_query = st.text_input("Prompt", value=default_query)
+    user_query = st.text_input("Prompt", value=prompt_options[selected_prompt])
 
     if st.button("Run Prompt"):
         try:
