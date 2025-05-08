@@ -160,7 +160,7 @@ Below is a preview of the Cursor Calendar —a programmable interface where agen
 
 ![Cursor Calendar Prototype](figures/cursor-cal.jpg)
 
-*Figure: Chat-integrated timeline interface. Events are generated, retrieved, and updated based on memory traces and natural language.*
+*Chat Interface integrated into calendar API. Events are generated, retrieved, and updated based on memory traces and natural language.*
 
 
 ## Contact 

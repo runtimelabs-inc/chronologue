@@ -71,34 +71,7 @@ def import_ics_to_dataframe(ics_text):
     df = pd.DataFrame(events)
     return df.drop(columns=['UID']) if 'UID' in df.columns else df
 
-
-
-### Need to extract Date, Day, Start Time, End Time, Duration (default: 15 min), Event Title, Location, Notes
-
-# --- JSON Calendar Parser ---
-def import_json_to_dataframe(json_text):
-    raw = json.loads(json_text)
-    if isinstance(raw, list) and isinstance(raw[0], str):
-        raw = [json.loads(item) for item in raw]
-
-    events = []
-    for item in raw:
-        start_dt = parse(item["timestamp"])
-        events.append({
-            "Date": start_dt.date().isoformat(),
-            "Day": start_dt.strftime("%A"),
-            "Start Time": start_dt.strftime("%I:%M %p").lstrip("0"),
-            "Start Time 24H": start_dt.strftime("%H:%M"),
-            "Start ISO": start_dt.isoformat(),
-            "End Time": (start_dt + pd.to_timedelta(item["duration_minutes"], unit='m')).strftime("%I:%M %p").lstrip("0"),
-            "Duration (min)": item["duration_minutes"],
-            "Event Title": item["title"],
-            "Notes": item.get("content", ""),
-            "Location": item.get("location", "")
-        })
-    return pd.DataFrame(events)
-
-# --- Memory Trace Parser ---
+# --- Memory Trace Parsing ---
 def load_memory_trace(json_text):
     try:
         memory_data = json.loads(json_text)
@@ -106,6 +79,31 @@ def load_memory_trace(json_text):
     except json.JSONDecodeError as e:
         st.error(f"Failed to parse JSON: {e}")
         return []
+
+def convert_full_memory_trace_to_dataframe(memory_entries):
+    rows = []
+    for entry in memory_entries:
+        start_dt = parse(entry["timestamp"])
+        duration = entry.get("duration_minutes", 15)
+
+        rows.append({
+            "Date": start_dt.date().isoformat(),
+            "Day": start_dt.strftime("%A"),
+            "Start Time": start_dt.strftime("%I:%M %p").lstrip("0"),
+            "Start Time 24H": start_dt.strftime("%H:%M"),
+            "Start ISO": start_dt.isoformat(),
+            "End Time": (start_dt + pd.to_timedelta(duration, unit='m')).strftime("%I:%M %p").lstrip("0"),
+            "Duration (min)": duration,
+            "Event Title": entry.get("content", f"({entry['type'].capitalize()})"),
+            "Location": ", ".join(entry.get("collaborators", [])) if entry.get("collaborators") else "",
+            "Notes": f"Type: {entry['type']}" +
+                     (f", Task: {entry['task_id']}" if 'task_id' in entry else '') +
+                     (f", Status: {entry['completion_status']}" if 'completion_status' in entry else '') +
+                     (f", Importance: {entry['importance']}" if 'importance' in entry else '')
+        })
+
+    return pd.DataFrame(rows)
+
 
 def format_memory_to_markdown(memory_entries):
     markdown_lines = []
@@ -122,7 +120,7 @@ def format_memory_to_markdown(memory_entries):
             markdown_lines.append(f"- **Completion Status**: {entry['completion_status']}")
         if 'collaborators' in entry:
             markdown_lines.append(f"- **Collaborators**: {', '.join(entry['collaborators'])}")
-        markdown_lines.append("")  # blank line for spacing
+        markdown_lines.append("")
     return "\n".join(markdown_lines)
 
 # --- Prompt Constructor ---
@@ -145,7 +143,8 @@ try:
 except FileNotFoundError:
     try:
         with open('modules/streamlit/data/example_schedule.json', 'r') as f_json:
-            default_df = import_json_to_dataframe(f_json.read())
+            memory = load_memory_trace(f_json.read())
+            default_df = convert_memory_trace_to_dataframe(memory)
     except FileNotFoundError:
         st.warning("No default file found in data/")
 
@@ -161,19 +160,11 @@ if uploaded_file:
     if file_type == "ics":
         df = import_ics_to_dataframe(text)
     elif file_type == "json":
-        try:
-            memory_entries = load_memory_trace(text)
-            calendar_events = [m for m in memory_entries if m.get("type") == "calendar_event"]
-            for e in calendar_events:
-                e["title"] = e["content"]
-                e["duration_minutes"] = 60  # placeholder if not present
-            df = import_json_to_dataframe(json.dumps(calendar_events))
-            markdown_content = format_memory_to_markdown(memory_entries)
-            st.markdown("## Memory Trace")
-            st.markdown(markdown_content)
-        except Exception as e:
-            st.error(f"Failed to process JSON: {e}")
-            df = pd.DataFrame()
+        memory_entries = load_memory_trace(text)
+        df = convert_full_memory_trace_to_dataframe(memory_entries)
+
+        # st.markdown("## Memory Trace")
+        # st.markdown(format_memory_to_markdown(memory_entries))
     else:
         st.error("Unsupported file format.")
         df = pd.DataFrame()
