@@ -1,4 +1,4 @@
-# streamlit run modules/tempo/streamlit.py
+# streamlit run modules/streamlit/streamlit-demo.py
 
 import streamlit as st
 import pandas as pd

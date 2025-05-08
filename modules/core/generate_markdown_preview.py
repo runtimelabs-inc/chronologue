@@ -1,4 +1,4 @@
-# modules/generate_markdown_preview.py
+# python modules/core/generate_markdown_preview.py
 
 import json
 from datetime import datetime

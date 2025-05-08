@@ -9,7 +9,7 @@ import io
 import json
 from openai import OpenAI
 
-st.set_page_config(page_title="Chronologue Command Agent", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Chronologue Command Agent", layout="wide")
 
 # --- Initialize OpenAI Client ---
 client = OpenAI()

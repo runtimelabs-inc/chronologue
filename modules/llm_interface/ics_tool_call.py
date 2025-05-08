@@ -3,15 +3,15 @@ from dotenv import load_dotenv
 import os
 import json
 from export_ics import generate_ics_string, write_consolidated_ics
-# Assuming schema.py is in the same directory
+
 from schema import validate_memory_trace
 from pathlib import Path
 
-# Load API key from environment
+
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Constants
+
 INPUT_DIR = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/conversation/raw")
 OUTPUT_DIR = Path("/Users/derekrosenzweig/Documents/GitHub/chronologue/data/conversation/api-processed")
 
@@ -75,7 +75,7 @@ def convert_json_folder_to_ics_with_tool_call(input_dir: Path, output_dir: Path)
                 print(f"[!] Skipping incomplete trace in {json_file.name}")
                 continue
 
-            # Add dummy ID if missing (to pass validation)
+            
             if "id" not in trace:
                 trace["id"] = f"{trace['task_id']}_{trace['timestamp'].replace(':', '').replace('-', '')}"
 
