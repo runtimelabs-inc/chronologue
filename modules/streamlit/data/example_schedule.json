@@ -1,0 +1,51 @@
+[
+    {
+      "title": "Team Sync",
+      "timestamp": "2025-05-12T10:00:00Z",
+      "duration_minutes": 60,
+      "content": "Weekly team sync to discuss priorities.",
+      "location": "Zoom",
+      "uid": "team-sync-mon@chronologue.ai"
+    },
+    {
+      "title": "Project Review",
+      "timestamp": "2025-05-13T14:00:00Z",
+      "duration_minutes": 60,
+      "content": "Review progress and blockers for Project X.",
+      "location": "Conference Room A",
+      "uid": "project-review-tue@chronologue.ai"
+    },
+    {
+      "title": "Haircut Appointment",
+      "timestamp": "2025-05-13T17:30:00Z",
+      "duration_minutes": 30,
+      "content": "Scheduled haircut at barbershop.",
+      "location": "Downtown Barbershop",
+      "uid": "haircut-tue@chronologue.ai"
+    },
+    {
+      "title": "Lab Meeting",
+      "timestamp": "2025-05-14T11:00:00Z",
+      "duration_minutes": 60,
+      "content": "Presentation and discussion of recent experiments.",
+      "location": "Lab B",
+      "uid": "lab-meeting-wed@chronologue.ai"
+    },
+    {
+      "title": "Client Call",
+      "timestamp": "2025-05-15T15:00:00Z",
+      "duration_minutes": 30,
+      "content": "Call with external client to review proposal.",
+      "location": "Zoom",
+      "uid": "client-call-thu@chronologue.ai"
+    },
+    {
+      "title": "Project Write-Up",
+      "timestamp": "2025-05-16T09:30:00Z",
+      "duration_minutes": 90,
+      "content": "Finalize draft of write-up for internal submission.",
+      "location": "Office",
+      "uid": "writeup-friday@chronologue.ai"
+    }
+  ]
+  

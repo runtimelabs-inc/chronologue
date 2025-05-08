@@ -7,8 +7,9 @@ from ics import Calendar
 from openai import OpenAI
 import json
 from zoneinfo import ZoneInfo
+from dateutil.parser import parse
 
-st.set_page_config(page_title="Chronologue Tempo Token Scheduler", layout="wide")
+st.set_page_config(page_title="Chronologue Scheduler", layout="wide")
 client = OpenAI()
 
 # --- Tempo Token Generator ---
@@ -70,12 +71,19 @@ def import_ics_to_dataframe(ics_text):
     df = pd.DataFrame(events)
     return df.drop(columns=['UID']) if 'UID' in df.columns else df
 
-# --- JSON Parser ---
+
+
+### Need to extract Date, Day, Start Time, End Time, Duration (default: 15 min), Event Title, Location, Notes
+
+# --- JSON Calendar Parser ---
 def import_json_to_dataframe(json_text):
     raw = json.loads(json_text)
+    if isinstance(raw, list) and isinstance(raw[0], str):
+        raw = [json.loads(item) for item in raw]
+
     events = []
     for item in raw:
-        start_dt = datetime.fromisoformat(item["timestamp"].replace("Z", "+00:00"))
+        start_dt = parse(item["timestamp"])
         events.append({
             "Date": start_dt.date().isoformat(),
             "Day": start_dt.strftime("%A"),
@@ -90,6 +98,33 @@ def import_json_to_dataframe(json_text):
         })
     return pd.DataFrame(events)
 
+# --- Memory Trace Parser ---
+def load_memory_trace(json_text):
+    try:
+        memory_data = json.loads(json_text)
+        return memory_data.get('memory', [])
+    except json.JSONDecodeError as e:
+        st.error(f"Failed to parse JSON: {e}")
+        return []
+
+def format_memory_to_markdown(memory_entries):
+    markdown_lines = []
+    for entry in memory_entries:
+        markdown_lines.append(f"### {entry['type'].capitalize()}")
+        markdown_lines.append(f"- **ID**: {entry['id']}")
+        markdown_lines.append(f"- **Timestamp**: {entry['timestamp']}")
+        markdown_lines.append(f"- **Content**: {entry['content']}")
+        if 'task_id' in entry:
+            markdown_lines.append(f"- **Task ID**: {entry['task_id']}")
+        if 'importance' in entry:
+            markdown_lines.append(f"- **Importance**: {entry['importance']}")
+        if 'completion_status' in entry:
+            markdown_lines.append(f"- **Completion Status**: {entry['completion_status']}")
+        if 'collaborators' in entry:
+            markdown_lines.append(f"- **Collaborators**: {', '.join(entry['collaborators'])}")
+        markdown_lines.append("")  # blank line for spacing
+    return "\n".join(markdown_lines)
+
 # --- Prompt Constructor ---
 def build_prompt(df, user_query):
     now_utc = datetime.utcnow()
@@ -102,7 +137,7 @@ def build_prompt(df, user_query):
     prompt += f"\nUser prompt: {user_query}\n"
     return prompt
 
-# --- Load Default File (ICS or JSON) ---
+# --- Load Default File (.ics or .json) ---
 default_df = pd.DataFrame()
 try:
     with open('modules/streamlit/data/example_schedule.ics', 'r') as f_ics:
@@ -116,22 +151,29 @@ except FileNotFoundError:
 
 st.session_state['calendar_df'] = default_df
 
-# --- UI ---
-st.title("Chronologue Tempo Token Scheduler")
+# --- Streamlit UI ---
+st.title("Chronologue Scheduler")
 
-uploaded_file = st.file_uploader(
-    "Upload your Calendar (.ics or .json)",
-    type=["ics", "json"],
-    help="Upload your .ics calendar or .json memory trace."
-)
-
+uploaded_file = st.file_uploader("Upload your Calendar (.ics or .json)", type=["ics", "json"])
 if uploaded_file:
     file_type = uploaded_file.name.split('.')[-1]
     text = uploaded_file.getvalue().decode()
     if file_type == "ics":
         df = import_ics_to_dataframe(text)
     elif file_type == "json":
-        df = import_json_to_dataframe(text)
+        try:
+            memory_entries = load_memory_trace(text)
+            calendar_events = [m for m in memory_entries if m.get("type") == "calendar_event"]
+            for e in calendar_events:
+                e["title"] = e["content"]
+                e["duration_minutes"] = 60  # placeholder if not present
+            df = import_json_to_dataframe(json.dumps(calendar_events))
+            markdown_content = format_memory_to_markdown(memory_entries)
+            st.markdown("## Memory Trace")
+            st.markdown(markdown_content)
+        except Exception as e:
+            st.error(f"Failed to process JSON: {e}")
+            df = pd.DataFrame()
     else:
         st.error("Unsupported file format.")
         df = pd.DataFrame()
@@ -159,7 +201,7 @@ if not df.empty:
         "Edit Event": "Move my Thursday client call to 4 PM.",
         "Remove Event": "Cancel the lab meeting scheduled for Wednesday.",
         "Conflict Check": "Can I add a meeting at 3 PM on Thursday?",
-        "Availability": "What’s my next free hour this afternoon?"
+        "Availability": "What's my next free hour this afternoon?"
     }
     selected_prompt = st.selectbox("Choose a test case", list(prompt_options.keys()))
     user_query = st.text_input("Prompt", value=prompt_options[selected_prompt])
@@ -179,3 +221,4 @@ if not df.empty:
                 st.markdown(res.choices[0].message.content.strip())
         except Exception as e:
             st.error(f"Failed to process prompt: {e}")
+
