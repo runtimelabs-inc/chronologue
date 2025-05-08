@@ -27,7 +27,7 @@
 
 ## Overview
 
-Chronologue transforms memory — such as conversation history — into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
+Chronologue transforms memory (ie. conversation history, scheduled events) into calendar-grounded interfaces for agents and users. By bridging natural language, structured memory, and scheduling, it enables agents to operate over time while giving users a familiar, editable interface to steer behavior and planning.
 
 <img src="figures/calendar-example.png" width="600">
 
