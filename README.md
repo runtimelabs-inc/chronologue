@@ -5,7 +5,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![MCP Protocol](https://img.shields.io/badge/Model%20Context%20Protocol-Integration-purple)](https://github.com/modelcontextprotocol)
 
-**Documentation** → [chronologue.ai](https://chronologue.ai)
+**Documentation:** [docs.chronologue.ai](https://docs.chronologue.ai)
 
 ## Table of Contents
 
