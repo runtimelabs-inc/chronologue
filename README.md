@@ -99,9 +99,9 @@ Follow the [Google Calendar API setup guide](calendar/google_API_setup.md) to en
 #### JSON ↔ ICS Conversion
 
 ```bash
-python modules/export_calendar.py        # JSON → ICS
-python modules/import_calendar.py        # ICS → JSON
-python modules/embeddings.py        # Generate embeddings for retrieval
+python modules/calendar_io/export_calendar.py        # JSON → ICS
+python modules/calendar_io/import_calendar.py        # ICS → JSON
+python modules/core/embeddings.py        # Generate embeddings for retrieval
 ```
 
 #### Run MCP Server 
